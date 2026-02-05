@@ -1,11 +1,17 @@
 import { defineConfig } from 'vitepress'
 import { menuItems } from '../util/menu'
+import markdownItKatex from 'markdown-it-katex'
 
 export default defineConfig({
-
   base: '/',
 
-  head: [[ "link", { rel: "icon", href: "/docs.png" }]],
+  head: [
+    [ "link", { rel: "icon", href: "/docs.png" }],
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css'
+    }]
+  ],
 
   title: "杨宇曦的博客",
   description: "记录学习积累内容",
@@ -53,5 +59,15 @@ export default defineConfig({
     footer: {
       copyright: 'Copyright@ 2025 Yang Yuxi. All rights reserved.',
     }
-  }
+  },
+
+  markdown: {
+    config(md) {
+      md.use(markdownItKatex, {
+        throwOnError: false,
+        errorColor: '#cc0000',
+      })
+    }
+  },
+
 })

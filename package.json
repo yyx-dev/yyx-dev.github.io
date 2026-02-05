@@ -13,10 +13,12 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "katex": "^0.16.28",
     "vitepress": "^1.6.3"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
+    "markdown-it-katex": "^2.0.3",
     "path": "^0.12.7"
   }
 }
