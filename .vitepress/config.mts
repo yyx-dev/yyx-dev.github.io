@@ -1,16 +1,11 @@
 import { defineConfig } from 'vitepress'
 import { menuItems } from '../util/menu'
-import markdownItKatex from 'markdown-it-katex'
 
 export default defineConfig({
   base: '/',
 
   head: [
     [ "link", { rel: "icon", href: "/docs.png" }],
-    ['link', {
-      rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css'
-    }]
   ],
 
   title: "杨宇曦的博客",
@@ -62,12 +57,6 @@ export default defineConfig({
   },
 
   markdown: {
-    config(md) {
-      md.use(markdownItKatex, {
-        throwOnError: false,
-        errorColor: '#cc0000',
-      })
-    }
-  },
-
+    math: true,
+  }
 })
