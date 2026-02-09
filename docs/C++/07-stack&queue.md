@@ -12,7 +12,9 @@
 
 后进先出，先进后出，$LIFO$ 原则（Last In First Out）。
 
+<center>
 <img src="./07-stack&queue.assets/进栈出栈图示.png" style="zoom: 50%;" />
+</center>
 
 ### 1.2 queue
 
@@ -24,7 +26,9 @@
 
 先进先出，后进后出，即 $FIFO$ 原则（First In First Out）。
 
+<center>
 <img src="./07-stack&queue.assets/队列结构功能示例图示.gif" style="zoom: 50%;" />
+</center>
 
 &nbsp;
 
@@ -111,7 +115,9 @@ private:
 
 出栈时，判断栈顶元素是否和最小值相等，相等则把最小栈中的元素也弹出。
 
+<center>
 <img src="./07-stack&queue.assets/双栈实现最小栈图示示例.gif" style="zoom: 60%;" />
+</center>
 
 ### 3.2 验证栈序列
 
@@ -143,11 +149,15 @@ public:
 
 **成功示例图示**
 
+<center>
 <img src="./07-stack&queue.assets/模拟栈匹配出入栈序列成功示例图示.gif" style="zoom:60%;" />
+</center>
 
 **不成功示例**
 
+<center>
 <img src="./07-stack&queue.assets/模拟栈匹配出入栈序列不成功示例图示.gif" style="zoom:60%;" />
+</center>
 
 待入栈数组遍历结束后，若出栈数组遍历结束或栈为空，说明匹配成功，若栈中仍有元素或出栈数组未遍历结束，说明匹配不成功。
 
@@ -250,7 +260,9 @@ private:
 };
 ~~~
 
+<center>
 <img src="./07-stack&queue.assets/栈实现队列的出栈操作图示.gif" style="zoom:60%;" />
+</center>
 
 入栈`pushST`和出栈`popST`互不影响，分别完成入队的出队的任务。只要`popST`为空，就将`pushST`中元素移入即可。
 
@@ -377,7 +389,9 @@ vector和list在随机访问和插入删除的方面各有优劣，为均衡二�
 
 双端队列deque是一种双端的、“连续”空间的数据结构。双端表示可以在头尾两端进行插入和删除，且时间复杂度为O(1)。
 
+<center>
 <img src="./07-stack&queue.assets/deque双端队列的原理介绍图示.png" style="zoom:60%;" />
+</center>
 
 | 增删接口                                  | 解释     |
 | ----------------------------------------- | -------- |
@@ -394,7 +408,9 @@ vector和list在随机访问和插入删除的方面各有优劣，为均衡二�
 
 deque底层并不是真正连续的空间，而是由一个中控指针数组保存每个用来存储数据的小连续空间buffer的地址。类似于一个动态的二维数组，如下图所示：
 
+<center>
 <img src="./07-stack&queue.assets/deque底层实现原理示例图示.gif" style="zoom:60%;" />
+</center>
 
 从中控数组的中部开始使用，头插使用前面的buffer，尾插使用后面的buffer。头插就向前开辟，尾插就向后开辟。
 
@@ -403,7 +419,9 @@ deque底层并不是真正连续的空间，而是由一个中控指针数组保
 - 中控数组扩容只拷贝指针，扩容代价低。
 - 先计算所在buffer再计算buffer内位置，可以支持随机访问。
 
+<center>
 <img src="./07-stack&queue.assets/deque的迭代器底层实现结构.png" style="zoom:60%;" />
+</center>
 
 > 如果单个buffer大小不固定，则需要迭代器支持随机访问，效率变低。
 
@@ -566,13 +584,17 @@ void adjust_down(int parent)
 
 此时堆的性质可能被破坏，不过只会影响该结点到根结点所在路径上的所有结点，故顺势向上调整：一直交换结点数值直到满足堆的性质即可。
 
+<center>
 <img src="./07-stack&queue.assets/二叉树堆插入结点示例.gif" style="zoom:60%;" />
+</center>
 
 堆删除就是将尾元素覆盖到堆顶，然后向下调整。
 
 只是堆顶元素不满足性质，其左右子树还是原样。只需将堆顶元素逐步向下调整：将根结点与其较大/小的子结点交换，只要父结点比子结点中任意一个大/小，就进行交换，直到交换到叶结点或不满足条件为止。
 
+<center>
 <img src="./07-stack&queue.assets/二叉树堆删除结点示例.gif" style="zoom:60%;" />
+</center>
 
 #### 仿函数
 
@@ -633,7 +655,9 @@ class priority_queue {
 };
 ~~~
 
+<center>
 <img src="./07-stack&queue.assets/priority_queue模板参数仿函数调用图示示例.png" style="zoom:60%;" />
+</center>
 
 
 

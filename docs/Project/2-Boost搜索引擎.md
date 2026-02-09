@@ -10,13 +10,17 @@
 
 对于搜索结果，基本包含三个部分：网页标题、网页内容摘要、目标网页地址。
 
+<center>
 <img src="https://img.gejiba.com/images/f29d5b97db5c9f1445096530f5fc4630.png" alt="搜索结果组成图示" border="0" style="zoom: 50%;" >
+</center>
 
 > 对于图片，视频等的展示，暂不考虑。
 
 ## 2. 搜索引擎的相关宏观原理
 
+<center>
 <img src="https://img.gejiba.com/images/20cfb315081a44ba6f0e501ef973ba68.png" alt="搜索引擎宏观实现原理" border="0" style="zoom: 50%;" >
+</center>
 
 ## 3. 相关技术栈和项目环境
 
@@ -359,7 +363,9 @@ bool SaveFiles(const std::vector<DocInfo>& parser_res, const std::string& output
 }
 ```
 
+<center>
 <img src="https://img.gejiba.com/images/a5228901ccb6ac7bf860ae7d9ec3c094.png" border="0">
+</center>
 
 > 结果如图所示：属性之间的分隔符是`\3`显示为`^C`。文档之间的分隔符是`\n`不显示。
 
@@ -535,7 +541,9 @@ DocInfo* BuildForwardIndex(const std::string& line)
 >
 > 使用示例：
 
+<center>
 <img src="https://img.gejiba.com/images/bb87a302e9bfb1a8c0e90aa5682c91fe.png" style="zoom:50%;" >
+</center>
 
 1. 先建立词频统计的结构体，再建立词和词频结构体的映射表。
 2. 针对标题和内容分别分词，再分别对每个词进行词频统计，统计到映射表中。
@@ -597,7 +605,9 @@ bool BuildInvertedIndex(const DocInfo& info)
 
 ## 7. 搜索引擎的模块
 
+<center>
 <img src="https://img.gejiba.com/images/91a5f2607079bef0986e64353ac333eb.png" style="zoom:50%;"  >
+</center>
 
 如图所示，搜索关键字也会被服务端分词，再进行索引查找，最后将所有结果返回给用户。
 
@@ -723,7 +733,9 @@ std::string GetDesc(std::string& content, const std::string& word)
 }
 ```
 
+<center>
 <img src="https://img.gejiba.com/images/c1a88cb30fd1e82dd3a356b7a4dc0918.png"/>&nbsp;
+</center>
 
 ### 7.3 问题修复
 
@@ -1043,4 +1055,6 @@ function BuildHtml(data) {
 </script>
 ```
 
+<center>
 <img src="https://img.gejiba.com/images/fb49a757d311fc7a4f255df1e50ad0a4.png" >
+</center>

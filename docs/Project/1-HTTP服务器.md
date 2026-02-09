@@ -743,7 +743,9 @@ public:
 
 ### 调用逻辑
 
+<center>
 <img src="https://img.gejiba.com/images/f6f73baa5fd26e94615388c1a585f610.png" alt="httpserver调用逻辑" border="0" style="zoom:50%;" >
+</center>
 
 &nbsp;
 
@@ -751,7 +753,9 @@ public:
 
 对于CGI机制的理解和实现。
 
+<center>
 <img src="https://img.gejiba.com/images/60227f51c300c20f1f1b5879101d5270.png" alt="HTTP服务流程" border="0">
+</center>
 
 整个HTTP服务就是CGI程序和客户端沟通的桥梁，因为CGI程序与外界的输入输出都由HTTP服务器代理和转发。
 

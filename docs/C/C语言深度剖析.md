@@ -115,7 +115,9 @@ signed char 类型的最小值是 –128，对应的二进制序列是 $1000\;00
 
 #### 有符号数的范围
 
+<center>
 <img src="https://img.gejiba.com/images/2fa4db682c3c597068a022969c599de1.png" style="zoom:50%;"  >
+</center>
 
 ### 1.7 _Bool
 
@@ -385,7 +387,9 @@ int main() {
 }
 ```
 
+<center>
 <img src="https://img.gejiba.com/images/6227087e0bce48ce74e2bf824d10efe8.gif"  style="zoom:50%;" >
+</center>
 
 - 函数内临时变量，是在该函数对应栈帧内部开辟的。临时变量的临时性，是因为栈帧会被自动释放。
 - 函数调用之前，会提前开辟好指定大小的栈帧。函数调用之后，栈帧会被释放。
@@ -402,7 +406,9 @@ Test(5, 1, 2, 3, 4, 5);
 
 使用可变参数列表，必须至少声明一个明确的参数。
 
+<center>
 <img src="https://img.gejiba.com/images/756ba31bd34182be859554e90fc1f0a3.png" style="zoom:50%;" >
+</center>
 
 > 既然我们理解可变参数列表的栈帧结构，我们就可以自行用指针获取每个变量。库中实现也是这个原理。
 
