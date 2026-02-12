@@ -52,7 +52,7 @@ export default defineConfig({
     },
 
     footer: {
-      copyright: 'Copyright@ 2025 Yang Yuxi. All rights reserved.',
+      copyright: 'Copyright@ 2026 Yang Yuxi. All rights reserved.',
     }
   },
 
