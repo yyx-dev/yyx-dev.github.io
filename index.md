@@ -18,9 +18,12 @@ hero:
     - theme: alt
       text: 数据结构实现
       link: https://gitee.com/yyx_dev/code_learn_daily/tree/DataStructure/
+    - theme: alt
+      text: 交流区
+      link: https://github.com/yyx-dev/yyx-dev.github.io/issues
 features:
-  - title: 正在更新中...
-    details: 408考研笔记，属于只提炼重点内容的笔记，而不是面面俱到的博客，目前更新数据结构中，如需代码实现可点击上方链接
+  - title: 数据结构正在更新中...
+    details: 408考研笔记，属于只提炼重点内容的笔记，而不是面面俱到的博客。如需数据结构代码实现可点击上方链接，如有话要说可点击上方交流区。
   - title: 已完结内容
     details: 非常认真细致且精美的博客，内容包含：C/C++，数据结构，Linux系统开发，Linux网络开发，多个校招项目，以及一些脚本小手册。
 ---
