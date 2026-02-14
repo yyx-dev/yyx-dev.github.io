@@ -137,3 +137,7 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* 暗色模式下，对所有图片应用反色滤镜 */
+html.dark img {
+    filter: invert(1);
+}

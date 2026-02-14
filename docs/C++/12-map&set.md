@@ -297,9 +297,7 @@ struct avl_node
 template<class K, class V>
 class avl_tree
 {
-    typedef avl_node<K, V> node;
-private:
-    node* _root = nullptr;
+    avl_node<K, V>* _root = nullptr;
 };
 ```
 
