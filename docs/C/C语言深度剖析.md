@@ -473,4 +473,4 @@ int main(int argc, char* argv[], char* envp[])
 // envp: 环境变量字符串数组
 ```
 
-[Linux系统：进程概念](https://blog.csdn.net/yourfriendyo/article/details/124700053)
+[Linux系统：进程概念](/docs/Linux/04-进程理解.md)
