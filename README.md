@@ -10,9 +10,6 @@
 sudo dnf update -y
 sudo dnf install -y nodejs npm git
 
-git clone https://gitee.com/yyx_dev/vite-press-blog.git
-cd vite-press-blog
-
 npm install
 npm run docs:dev
 npm run docs:build
@@ -21,14 +18,14 @@ sudo dnf install -y nginx
 sudo systemctl enable nginx
 sudo systemctl start nginx
 
-sudo mkdir -p /var/www/html/vite-press-blog
-sudo cp -r .vitepress/dist/* /var/www/html/vite-press-blog
-sudo vim /etc/nginx/conf.d/vite-press-blog.conf
+sudo mkdir -p /var/www/html/blog
+sudo cp -r .vitepress/dist/* /var/www/html/blog
+sudo vim /etc/nginx/conf.d/blog.conf
 
 server {
     listen 80;
 
-    root /var/www/html/vite-press-blog;
+    root /var/www/html/blog;
     index index.html;
 
     location / {
