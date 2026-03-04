@@ -52,7 +52,7 @@ export default defineConfig({
     },
 
     footer: {
-      copyright: 'Copyright@ 2026 Yang Yuxi. All rights reserved.',
+      copyright: 'Released under the MIT License.<br>Copyright@ 2021-2026 Yang Yuxi. All rights reserved.',
     }
   },
 
