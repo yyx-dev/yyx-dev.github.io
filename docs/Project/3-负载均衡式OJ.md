@@ -23,10 +23,6 @@
 
 ## 2. 结构设计和实现思路
 
-<center>
-<img src="https://img.gejiba.com/images/e7cae9c024d3a18ec9a3f42bad44df1b.png" style="zoom:50%;" >
-</center>
-
 我们的项目核心是如下三个模块：
 
 | 目录             | 介绍                                                         |
@@ -107,10 +103,6 @@ namespace NS_Log
 ### 2.2 编译运行模块
 
 #### 编译模块
-
-<center>
-<img src="https://img.gejiba.com/images/6d7b7ff8f8caee6ca1777baeabd8e7d2.png" style="zoom:50%;" >
-</center>
 
 ```cpp
 // ret: 编译是否成功
@@ -240,10 +232,6 @@ static void SetProcLimit(int cpu_limit, int mem_limit)
 ```
 
 #### 编译运行模块
-
-<center>
-<img src="https://img.gejiba.com/images/9b8e05359f869ada83a088f297fb4b95.png" style="zoom:50%;"  >
-</center>
 
 `compile_run.hpp`实现编译和运行功能。
 
@@ -408,10 +396,6 @@ int main()
 ```
 
 如上代码就是我们的网络编译服务，我们采用 Posman 进行测试。
-
-<center>
-<img src="https://img.gejiba.com/images/efd2a8002767a76db63ae126162d6601.png" style="zoom:50%;" >
-</center>
 
 至此，我们的编译运行服务模块就完成了。
 
@@ -650,10 +634,6 @@ svr.Get(R"(/judge/(\d+))", [&ctrl](const Request& req, Response& rsp){
 
 - `json`串就是保存数据的数据字典，也就是一个一个的`kv`结构。
 - 原始网页内容包含`json`串中的`key`值，ctemplate所作的渲染就是将`key`值对应的`value`导入到网页中。
-
-<center>
-<img src="https://img.gejiba.com/images/cc5dc77678456769eb40041cf8c10949.png" style="zoom:50%;"  >
-</center>
 
 ```cpp
 class View
@@ -1013,10 +993,6 @@ void Judge(const std::string& number, const std::string& in_json, std::string* o
 
 ### 3.2 题库列表
 
-<center>
-<img src="https://img.gejiba.com/images/9cb21fd09376141b27d5ed3567a33cdd.png" a style="zoom:50%;" >
-</center>
-
 ```html
 <!-- 题库列表 -->
 <!DOCTYPE html>
@@ -1150,10 +1126,6 @@ void Judge(const std::string& number, const std::string& in_json, std::string* o
 ```
 
 ### 3.3 题目编写
-
-<center>
-<img src="https://img.gejiba.com/images/ce89f5ae08c922f8e6bba84c2bb5b233.png" style="zoom:50%;" >
-</center>
 
 网页编写代码的话，我们可以使用ACE在线代码编辑器。
 
@@ -1615,10 +1587,6 @@ int main()
 ##### 安装环境
 
 要想使用C/C++的MySQL接口，必须使用MySQL提供的库。如果当初是用yum安装MySQL的直接就有。
-
-<center>
-<img src="https://img.gejiba.com/images/0e99187e24b6a23ff917f76efcc905fa.png" style="zoom:50%;" >
-</center>
 
 如果没有目录`/usr/include/mysql`，可以安装如下两个程序
 
