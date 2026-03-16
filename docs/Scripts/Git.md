@@ -80,8 +80,6 @@ git config alias.st status # git st = git status
 git config alias.lpa 'log --pretty=oneline --abbrev-commit'
 ```
 
-&nbsp;
-
 ## 分支管理
 
 查看分支
@@ -135,8 +133,6 @@ git remote show origin
 git remote prune origin
 ```
 
-&nbsp;
-
 ## 远程操作
 
 查看远程仓库
@@ -165,8 +161,6 @@ git pull origin master
 ```shell
 git branch --set-upstream-to=origin/dev dev
 ```
-
-&nbsp;
 
 ## 标签管理
 

@@ -23,8 +23,6 @@
 
 Centos7云服务器，vim/gcc(g++)/Makefile，vscode
 
-&nbsp;
-
 ## 4. 搜索引擎的具体原理
 
 ### 4.1 正排索引和倒排索引
@@ -102,8 +100,6 @@ https://www.boost.org
 ```
 
 目标是：把每个文档都进行去标签，清洗后写到同一个文件中，每个文档的内容用`\3`分隔。`\3`是不可显的控制字符，不会污染净化后的数据。
-
-&nbsp;
 
 ## 5. 数据清洗的模块
 
@@ -355,8 +351,6 @@ bool SaveFiles(const std::vector<DocInfo>& parser_res, const std::string& output
 
 > 结果如图所示：属性之间的分隔符是`\3`显示为`^C`。文档之间的分隔符是`\n`不显示。
 
-&nbsp;
-
 ## 6. 建立索引的模块
 
 ### 6.1 大体框架
@@ -583,8 +577,6 @@ bool BuildInvertedIndex(const DocInfo& info)
 }
 ```
 
-&nbsp;
-
 ## 7. 搜索引擎的模块
 
 如图所示，搜索关键字也会被服务端分词，再进行索引查找，最后将所有结果返回给用户。
@@ -751,8 +743,6 @@ getline(std::cin, query);
 
 
 
-&nbsp;
-
 ## 8. http服务的模块
 
 ### 8.1 工具安装和使用
@@ -844,8 +834,6 @@ int main()
     return 0;
 }
 ```
-
-&nbsp;
 
 ## 9. 编写前端模块
 

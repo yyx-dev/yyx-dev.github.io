@@ -27,8 +27,6 @@
 - centos7
 - vim gcc/g++ Makefile
 
-&nbsp;
-
 ## 2. 代码结构和实现思路
 
 ### TcpServer

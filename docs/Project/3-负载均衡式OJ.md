@@ -19,8 +19,6 @@
 - centos 7 服务器
 - vim / gcc(g++) / makefile
 
-&nbsp;
-
 ## 2. 结构设计和实现思路
 
 我们的项目核心是如下三个模块：
@@ -56,8 +54,6 @@ OnlineJudge/
 │   └── Makefile
 └── Makefile
 ```
-
-&nbsp;
 
 ### 2.1 日志模块
 
@@ -97,8 +93,6 @@ namespace NS_Log
 #define LOG(level) Log(#level, __FILE__, __LINE__)
 }
 ```
-
-&nbsp;
 
 ### 2.2 编译运行模块
 
@@ -402,8 +396,6 @@ int main()
 > 为什么将编译运行模块独立成一个服务呢？
 
 编译运行服务比较耗时耗资源，危险系数比较高，独立出来便于进行分布部署在多台主机。
-
-&nbsp;
 
 ### 2.3 OJ服务模块
 
@@ -733,8 +725,6 @@ class View
 
 放到指定目录下，由`View`模块调用，最后后由`oj_server`中的`Control`模块调用。
 
-&nbsp;
-
 #### 负载均衡功能
 
 负载均衡首先我们要有关于服务主机的配置类，负载均衡功能类。此外，我们可以在目录下新建`server.conf`作为服务主机的配置文件。
@@ -889,8 +879,6 @@ void Judge(const std::string& number, const std::string& in_json, std::string* o
     }
 }
 ```
-
-&nbsp;
 
 ## 3. 前端页面和数据库化
 
@@ -1737,8 +1725,6 @@ namespace NS_Model
     };
 }
 ```
-
-&nbsp;
 
 ## 4. 项目总结和项目扩展
 

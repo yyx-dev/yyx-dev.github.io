@@ -2,13 +2,13 @@
 
 vector是用数组实现的、可变长度的顺序容器，本质是一种类模板。
 
-~~~cpp
+```cpp
 template <
 	class T, // 元素类型
 	class Alloc = allocator<T> > // 空间配置器类型
 
 class vector; // 类模板声明
-~~~
+```
 
 ## 1. vector的接口
 
@@ -31,11 +31,11 @@ class vector; // 类模板声明
 | `size_type max_size()`                                       | 最大能存储的元素个数（无意义） |
 | **`void resize(size_type n, value_type val = value_type());`** | **增减有效元素个数**           |
 
-~~~cpp
+```cpp
 v.reserve(100);   // 扩容到100
 v.resize(100, 1); // 有效元素个数变为100,新增元素初始化为1
 v.resize(10);     // 有效元素个数变为10
-~~~
+```
 
 <center>
 <img src="./05-vector.assets/vector增容具体情况.png" style="zoom: 67%;" />
@@ -66,7 +66,7 @@ v.resize(10);     // 有效元素个数变为10
 
 STL 中容器的迭代器区间都是采用 $[first,last)$ 左闭右开的方式。
 
-~~~cpp
+```cpp
 //[]
 for (size_t i = 0; i < v.size(); i++) {
     v1[i] += 1;
@@ -82,7 +82,7 @@ while (it != v.end()) {
 for (auto e : v) {
     cout << e << " ";
 }
-~~~
+```
 
 ### 1.4 修改操作
 
@@ -97,13 +97,13 @@ for (auto e : v) {
 | `iterator erase (iterator first, iterator last)`             | 删除一段迭代器区间     |
 | `void assign (size_type n, const value_type& val)`           | 覆盖数据               |
 
-~~~cpp
+```cpp
 v.insert(ret, 30);
 v.insert(ret, 2, 30);
 v.insert(ret, v2.begin(), v2.end());
 v1.erase(pos);
 v1.erase(v1.begin(), v1.end());
-~~~
+```
 
 ```cpp
 #include <algorithm>
@@ -111,8 +111,6 @@ v1.erase(v1.begin(), v1.end());
 template <class InputIter, class T>
    InputIter find (InputIter first, InputIter last, const T& val);
 ```
-
-&nbsp;
 
 ## 2. vector的模拟实现
 
@@ -122,7 +120,7 @@ template <class InputIter, class T>
 
 ### 2.1 类的定义
 
-~~~cpp
+```cpp
 template <class T, class Alloc = alloc>
 class vector {
 public:
@@ -133,21 +131,21 @@ private:
     iterator finish;
     iterator end_of_storage;
 }
-~~~
+```
 
 这个结构和顺序表结构稍有不同，但本质是一样的。只是将容量和元素个数的变量用指向对应位置的迭代器代替。
 
-~~~cpp
+```cpp
 class Seqlist {
     T* _a;            /* start */
     size_t _size;     /* finish - start */
     size_t _capacity; /* end_of_storage - start */
 }
-~~~
+```
 
 ### 2.2 默认成员函数
 
-~~~cpp
+```cpp
 //default constructor
 vector()
     : _start(nullptr)
@@ -176,9 +174,9 @@ vector(const vector<T>& v)
     _finish = _start + v.size();
     _end_of_storage = _start + v.capacity();
 }
-~~~
+```
 
-~~~cpp
+```cpp
 //range constructor
 template <class InputIterator>
 vector(InputIterator first, InputIterator last)
@@ -214,7 +212,7 @@ vector<T>& operator=(vector<T> v)  /* pass by value */
     swap(v);
     return *this;
 }
-~~~
+```
 
 > 从范围构造可以看出类模板中的函数也可以是函数模板。
 
@@ -245,14 +243,14 @@ vector<T>& operator=(vector<T> v)  /* pass by value */
 
 #### memcpy 浅拷贝问题
 
-~~~cpp
+```cpp
 vector<string> v;
 v.push_back("11111111111111");
 v.push_back("11111111111111");
 v.push_back("11111111111111");
 v.push_back("11111111111111");
 v.push_back("11111111111111"); // 增容浅拷贝
-~~~
+```
 
 出现问题是因为正好数组需要增容。模拟实现的`reserve`函数使用`memcpy`将原空间的内容按字节拷贝至新空间。
 
@@ -263,7 +261,7 @@ v.push_back("11111111111111"); // 增容浅拷贝
 <img src="./05-vector.assets/memcpy浅拷贝问题.png" style="zoom: 40%;" />
 </center>
 
-~~~cpp
+```cpp
 void reserve(size_t n)
 {
     if (n > capacity())
@@ -287,7 +285,7 @@ void reserve(size_t n)
         _end_of_storage = _start + n;
     }
 }
-~~~
+```
 
 ```cpp
 void resize(size_t n, T val = T())
@@ -310,7 +308,7 @@ void resize(size_t n, T val = T())
 
 ### 2.4 修改接口
 
-~~~cpp
+```cpp
 iterator insert(iterator pos, const T& val)
 {
     assert(_start <= pos && pos <= _finish); // 检查pos位置是否合法
@@ -333,7 +331,7 @@ iterator insert(iterator pos, const T& val)
     ++_finish;
     return pos; //返回迭代器最新位置
 }
-~~~
+```
 
 - 增容改变`_start`，但迭代器`pos`并没有跟着改变，仍然指向原空间，也就是迭代器失效。
 - 迭代器`pos`实参并没有改变仍然指向错误位置，故函数返回更新的`pos`。
@@ -357,8 +355,6 @@ iterator erase(iterator pos)
 
 - erase **挪动数据后 pos 指向元素会发生变化**，同样会导致迭代器失效。
 - 返回删除数据的下一个位置，通过返回值更新迭代器。
-
-&nbsp;
 
 ## 3. vector的oj题
 

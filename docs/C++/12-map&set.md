@@ -128,8 +128,6 @@ while (ret)
 }
 ```
 
-&nbsp;
-
 ## 1.3 map
 
 map底层也是平衡搜索树，map的元素按照键值key进行排序。map支持下标访问符，可以找到与key对应的value。
@@ -252,8 +250,6 @@ for (auto& kv: count_map)
 `multimap`和`map`的区别是可存在重复数据。所以`multimap`无法重载`[]`操作符。
 
 `count`可以用来统计同一`key`值元素的出现次数。
-
-&nbsp;
 
 # 2. 底层结构
 
@@ -718,8 +714,6 @@ int height(node* root)
 > AVL树、红黑树、B树都是了解性的数据结构，到此足矣。
 >
 
-&nbsp;
-
 ## 2.2 红黑树
 
 ### 红黑树的定义
@@ -1163,8 +1157,6 @@ bool check(node* root, int& mark, int cnt)
 ```
 
 [红黑树](https://www.cnblogs.com/fornever/archive/2011/12/02/2270692.html)
-
-&nbsp;
 
 # 3. 实现封装
 

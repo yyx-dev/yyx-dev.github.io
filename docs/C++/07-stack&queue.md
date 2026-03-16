@@ -30,18 +30,16 @@
 <img src="./07-stack&queue.assets/队列结构功能示例图示.gif" style="zoom: 50%;" />
 </center>
 
-&nbsp;
-
 ## 2. 接口
 
 ### 2.1 stack
 
 STL中的栈和队列不是容器而是容器适配器。
 
-~~~cpp
+```cpp
 template <class T, class Container = deque<T> >
 class stack;
-~~~
+```
 
 stack 的底层可以使用任何容器，只要该容器支持`empty`、`back`、`push_back`、`pop_back`这些接口。如果没有为stack指定底层容器，默认使用deque。
 
@@ -81,7 +79,7 @@ queue也是容器适配器。底层容器要求和stack一样。
 
 [最小栈](https://leetcode-cn.com/problems/min-stack/)
 
-~~~cpp
+```cpp
 class MinStack {
 public:
     void push(int val) {
@@ -106,7 +104,7 @@ private:
     stack<int> st;
     stack<int> minST;
 };
-~~~
+```
 
 准备两个栈，一个用来正常入栈出栈，一个用来存储最小值。
 
@@ -125,7 +123,7 @@ private:
 
 一个入栈序列对应多种出栈序列，只能拿一个栈用来模拟，如果能匹配出当前的出栈序列，则两者是匹配的。
 
-~~~cpp
+```cpp
 class Solution {
 public:
     bool IsPopOrder(vector<int> pushV, vector<int> popV) {
@@ -141,7 +139,7 @@ public:
         return st.empty(); // 出栈数组遍历结束或栈为空
     }
 };
-~~~
+```
 
 定义一个模拟栈，定义两个指针指向出入数组的起始位置，向后遍历。
 
@@ -184,7 +182,7 @@ public:
 - 遇到操作符，连续取两个栈顶元素（先出为右，后出为左）作操作数与其运算，运算结果入栈。
 - 遍历结束后，栈顶即结果。
 
-~~~cpp
+```cpp
 class Solution {
 public:
     int evalRPN(vector<string>& tokens) {
@@ -218,7 +216,7 @@ public:
         return st.top();//返回栈顶元素
     }
 };
-~~~
+```
 
 ### 3.4 用栈实现队列
 
@@ -228,7 +226,7 @@ public:
 
 只要出栈为空，就将入栈中的数据全部导入出栈。只有当出栈为空时，才会导入，以免打乱顺序。保证了出栈和取数据时有元素。
 
-~~~cpp
+```cpp
 class MyQueue {
 public:
     void push(int x) {
@@ -258,7 +256,7 @@ private:
     stack<int> _pushST;
     stack<int> _popST;
 };
-~~~
+```
 
 <center>
 <img src="./07-stack&queue.assets/栈实现队列的出栈操作图示.gif" style="zoom:60%;" />
@@ -272,7 +270,7 @@ private:
 
 用队列实现栈，需要考虑栈是先进后出的结构，都是顺序容器插入操作一致，删除操作需要将队列中的前`n-1`个元素移入另一个队列，只留最后一个元素。
 
-~~~cpp
+```cpp
 class MyStack {
 public:
     void push(int x) {
@@ -299,9 +297,7 @@ private:
     queue<int> q1;
     queue<int> q2;
 };
-~~~
-
-&nbsp;
+```
 
 ## 4. 模拟实现
 
@@ -309,7 +305,7 @@ private:
 
 适配器是一种设计模式。数据结构栈可以用数组和链表实现，C++中栈被实现成容器的适配器，通过复用底层容器的接口。
 
-~~~cpp
+```cpp
 template <class T> class stack {
     void push(const T& x) {
         _v.push_back(x);
@@ -318,11 +314,11 @@ template <class T> class stack {
 private:
     vector<T> _v;
 }
-~~~
+```
 
 > 直接将容器 vector 作成员变量，所有接口都调用 vector 的接口即可。
 
-~~~cpp
+```cpp
 template <class T, class Container = deque<T>>
 class stack {
 public:
@@ -344,13 +340,13 @@ public:
 private:
     Container _con;
 };
-~~~
+```
 
 STL直接将容器类型作为类模板参数传入，支持自定义底层容器，并采用缺省参数的形式，指定默认容器为 deque。
 
 ### 4.2 queue
 
-~~~cpp
+```cpp
 template<class T, class Container = deque<T>>
 class queue
 {
@@ -377,7 +373,7 @@ public:
 private:
     Container _con;
 };
-~~~
+```
 
 > queue也是容器适配器，只要按照queue的特性，将适配容器的接口换一下即可。
 
@@ -450,28 +446,26 @@ deque基本兼具两大容器的优点，缺点是中部增删效率低，且做
 
 > deque颇具局限性，仅作了解。
 
-&nbsp;
-
 ## 5. priority_queue
 
 ### 5.1 接口使用
 
 优先级队列priority_queue同样是个容器适配器，不同于stack和queue只是对容器的简单封装。它有三个模板参数：
 
-~~~cpp
+```cpp
 template <class T, /* 数据类型 */
 	      class Container = vector<T>, /* 适配容器 */
 		  class Compare = less<typename Container::value_type> > /* 仿函数 */
 class priority_queue;
-~~~
+```
 
 priority_queue要求底层容器必须具有随机访问迭代器，支持`empty`,`size`,`front`,`push_back`,`pop_back`几种接口，一般使用vector作底层容器。
 
 priority_queue就是堆，能够实现堆的各种算法。因为要维护容器本身的特性，所以不支持遍历。
 
-~~~cpp
+```cpp
 class Compare = less<typename Container::value_type>
-~~~
+```
 
 priority_queue默认数值大优先级高，也就是默认大堆。想要排成小堆，需要指定priority_queue的仿函数参数，传入`greator<T>`。
 
@@ -486,7 +480,7 @@ priority_queue默认数值大优先级高，也就是默认大堆。想要排成
 
 [Top-K](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
 
-~~~cpp
+```cpp
 class Solution {
 public:
     //建大堆会选出整个数组的最大值，减小堆才能选出第k大的数
@@ -504,7 +498,7 @@ public:
         return pq.top();
     }
 };
-~~~
+```
 
 
 
@@ -512,7 +506,7 @@ public:
 
 #### 基本接口
 
-~~~cpp
+```cpp
 template<class T, class Container = std::vector<T>, class Compare = less<T>>
 class priority_queue
 {
@@ -539,11 +533,11 @@ private:
     Container _con;
     Compare _cmp;
 };
-~~~
+```
 
 #### 向上向下调整算法
 
-~~~cpp
+```cpp
 void adjust_up(int child)
 {
     int parent = (child - 1) / 2;
@@ -578,7 +572,7 @@ void adjust_down(int parent)
         child  = parent * 2 + 1;
     }
 }
-~~~
+```
 
 堆插入就是数组尾插一个元素，然后向上调整。
 
@@ -600,7 +594,7 @@ void adjust_down(int parent)
 
 决定大堆还是小堆，在于向上/向下调整算法中的父子节点的比较关系：
 
-~~~cpp
+```cpp
 if (_cmp(_con[parent], _con[child])) {
 	swap(_con[parent], _con[child]);
 }
@@ -608,7 +602,7 @@ if (_cmp(_con[parent], _con[child])) {
 if (child + 1 < _con.size() && _cmp(_con[child], _con[child + 1])) {
     child++;
 }
-~~~
+```
 
 比较大小操作符写死不便用户修改，使用宏定义，函数指针都比较复杂，还有一种简单的方式就是仿函数。
 
@@ -616,7 +610,7 @@ if (child + 1 < _con.size() && _cmp(_con[child], _con[child + 1])) {
 
 仿函数相当于更高级的泛型，使用仿函数能够改变执行逻辑，仿函数内部的实现完全由用户自定，拥有极大的自定义空间。
 
-~~~cpp
+```cpp
 template <class T>
 struct less {
     bool operator()(const T& left, const T& right) const {
@@ -634,11 +628,11 @@ Less less;
 less(1, 2);
 Greater greater;
 greater(1, 2);
-~~~
+```
 
 仿函数本质是一种类型，所以可以作模版参数，让用户定义类的时候指定。
 
-~~~cpp
+```cpp
 template <class T, class Container = vector<T>, class Compare = Less<T>>
 class priority_queue {
     void adjust_up(int child) {
@@ -653,7 +647,7 @@ class priority_queue {
     }
     Compare _cmp;
 };
-~~~
+```
 
 <center>
 <img src="./07-stack&queue.assets/priority_queue模板参数仿函数调用图示示例.png" style="zoom:60%;" />
@@ -661,7 +655,7 @@ class priority_queue {
 
 
 
-~~~cpp
+```cpp
 #include <iostream>
 #include <vector>
 
@@ -758,4 +752,4 @@ private:
 };
 
 }
-~~~
+```
