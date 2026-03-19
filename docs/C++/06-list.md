@@ -146,7 +146,7 @@ list()
 ```
 
 <center>
-<img src="./06-list.assets/空list图示.png" style="zoom:80%;" />
+<img src="./06-list.assets/空list.png" style="zoom:80%;" />
 </center>
 
 ```cpp
@@ -276,7 +276,7 @@ public:
 相当于把具体的元素引用和指针类型交给外界控制。就不需要单独实现一个常量迭代器了。
 
 <center>
-<img src="./06-list.assets/常对象和普通对象调用迭代器的不同示例图示.png" style="zoom:80%;" />
+<img src="./06-list.assets/常对象和普通对象调用迭代器的不同示例.png" style="zoom:80%;" />
 </center>
 
 当元素是自定义类型时，箭头操作符可以让迭代器直接访问到自定义类型的内部成员。如：
@@ -374,11 +374,11 @@ const_reverse_iterator rend() const { return const_reverse_iterator(begin()); }
 **所有容器的迭代器`begin/end()`和`rbegin/rend()`指向的位置正好对应相反**。目的是设计出对称形式，因此解引用时返回的是上一个位置的数据。
 
 <center>
-<img src="./06-list.assets/正反迭代器的begin&end对应相反图示.png" style="zoom:67%;" />
+<img src="./06-list.assets/正反迭代器的begin&end对应相反.png" style="zoom:67%;" />
 </center>
 
 <center>
-<img src="./06-list.assets/反向迭代器遍历示例图示.gif" style="zoom: 60%;" />
+<img src="./06-list.assets/反向迭代器遍历示例.gif" style="zoom: 60%;" />
 </center>
 
 #### 迭代器接口
@@ -454,7 +454,7 @@ iterator erase(iterator pos)
 - list 的删除操作迭代器一定失效，因为节点已经被释放了，应修正为 pos 下一个位置。
 
 <center>
-<img src="./06-list.assets/list模拟实现尾插元素图示示例.png" style="zoom: 60%;" />
+<img src="./06-list.assets/list模拟实现尾插元素示例.png" style="zoom: 60%;" />
 </center>
 
 ```cpp

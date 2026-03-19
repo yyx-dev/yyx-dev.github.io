@@ -351,7 +351,7 @@ iterator erase(iterator pos)
 }
 ```
 
-![](05-vector.assets/vector erase删除时略过元素图示示例.gif)
+![](05-vector.assets/vector erase删除时略过元素示例.gif)
 
 - erase **挪动数据后 pos 指向元素会发生变化**，同样会导致迭代器失效。
 - 返回删除数据的下一个位置，通过返回值更新迭代器。
