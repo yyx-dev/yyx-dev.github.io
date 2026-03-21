@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { menuItems } from '../util/menu'
+import { menu } from './menu.mjs'
 
 export default defineConfig({
   base: '/',
@@ -18,13 +18,10 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      ...menuItems.map(item => ({
-        text: item.text,
-        items: item.items || []
-      }))
+      ...menu,
     ],
 
-    sidebar: menuItems,
+    sidebar: menu,
 
     socialLinks: [
       { icon: 'gitee', link: 'https://gitee.com/yyx_dev' },
@@ -70,3 +67,5 @@ export default defineConfig({
     math: true,
   }
 })
+
+
