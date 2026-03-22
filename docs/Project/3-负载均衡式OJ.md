@@ -1733,7 +1733,6 @@ namespace NS_Model
 - 使用多个知名的开源库，如`Boost`、`cpp-httplib`、`ctemplate`、`jsoncpp`。
 - 良好的负载均衡方案设计。
 - 支持多进程和多线程。
-
 - 有一定的前端技术美化项目。
 
 ### 项目扩展

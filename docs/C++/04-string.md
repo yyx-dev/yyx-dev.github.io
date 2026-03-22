@@ -2,13 +2,11 @@
 
 ## 1. string 类的定义
 
-
 C语言中，字符串以`'\0'`结尾的一些字符的集合。为操作方便，同时提供了一些关于 str 库函数，但这些库函数和字符串是分离的，并不符合面向对象的思想。
 
 string 是 C++ 中管理字符数组的一个类，是 STL中的一个容器，把字符串交由 string 管理，减轻了编程难度。
 
 [string官方文档](https://legacy.cplusplus.com/reference/string/string/)
-
 
 ```cpp
 template <class T>
@@ -299,7 +297,6 @@ string(const char* str = "")
 - 构造函数初始化`_str`时，不可直接时用`str`初始化`_str`，以致`_str`存储在栈上无法实现增容等一系列操作。**须动态开辟一个和`str`一样大的空间，再将`str`的内容拷贝到`_str`中。**
 - 构造函**数参数一般采用全缺省的形式**，因为`string s;`只构造对象不初始化时其值默认为空值`""`。
 
-
 #### 拷贝构造
 
 实际上两个对象应该有各自独立的字符串，**拷贝构造应实现二者内容相同，即实现深拷贝而非浅拷贝**。
@@ -374,7 +371,6 @@ string& operator=(string s)
 1. `_str`和`tmp._str`的交换，达到了一石二鸟的效果：
    - 利用临时对象将`s`的数据交换到了操作对象中，相当于进行了赋值。
    - 和拷贝构造不同的是，`_str`指向的原有数据，经交换后在析构函数内被`tmp._str`顺带释放，就无需手动释放了。
-
 2. 更精炼版利用传值调用产生临时拷贝的特点，直接使用`s`当作临时对象，免去构造临时对象`tmp`，同时也能达到顺带释放的效果。
    - 但由于传值拷贝的特点，无法判断自赋值的情况，不过并不影响程序运行。
 
@@ -501,7 +497,6 @@ string& insert(size_t pos, const char* str)
     size_t len = strlen(str);
     if (_size + len >= _capacity)
         reserve(_size + len);
-
 
     size_t end = _size + 1;
     while (end > pos)

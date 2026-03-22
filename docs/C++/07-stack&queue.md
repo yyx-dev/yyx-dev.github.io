@@ -500,8 +500,6 @@ public:
 };
 ```
 
-
-
 ### 5.2 模拟实现
 
 #### 基本接口
@@ -652,8 +650,6 @@ class priority_queue {
 <center>
 <img src="./07-stack&queue.assets/priority_queue模板参数仿函数调用示例.png" style="zoom:60%;" />
 </center>
-
-
 
 ```cpp
 #include <iostream>

@@ -480,8 +480,8 @@ void rotate_r(node* parent)
 </center>
 
 1. 先把`bf=1`的节点的左子树链接到`bf=2`的节点的右边。
-1. 再将`bf=2`的节点链接到`bf=1`的节点的左边。
-1. 最后`bf=-1`的节点作当前树的根，和整棵树链接。
+2. 再将`bf=2`的节点链接到`bf=1`的节点的左边。
+3. 最后`bf=-1`的节点作当前树的根，和整棵树链接。
 
 <center>
 <img src="./12-map&set.assets/AVL树左单旋.gif" style="zoom:30%;" />
@@ -1540,7 +1540,6 @@ self& operator--()
 <center>
 <img src="./12-map&set.assets/MapSet迭代器自增逻辑动例.gif" style="zoom:30%;" />
 </center>
-
 
 ## 3.3 set
 

@@ -82,7 +82,6 @@ print(a)
 print(4 > 3)
 print(4 < 3)
 
-
 # 数组类型
 names = ['姚万万', '邹碧惠', '郑美水', '蔡成功']
 
@@ -439,7 +438,6 @@ Python 中的函数可以一次返回多个值，这是非常好的特性。
 def test():
     return 1, 2
 
-
 ret = test()
 a, b = test()
 _, b = test() # 下划线占位忽略该位置的返回值
@@ -467,7 +465,6 @@ def test():
     global x    # 声明x为全局变量
     x = 20
     print(f'x={x}')
-
 
 test()
 print(x)
@@ -510,7 +507,6 @@ def add(x, y, debug=False):
         print(f'x = {x}, y = {y}')
     return x + y
 
-
 ret = add(10, 20, True)
 ret = add(10, 20)
 print(ret)
@@ -523,7 +519,6 @@ print(ret)
 ```python
 def get(x, y):
     print(x , y)
-
 
 get(x=10, y=20)
 get(y=10, x=20)
