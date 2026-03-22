@@ -67,5 +67,3 @@ export default defineConfig({
     math: true,
   }
 })
-
-
