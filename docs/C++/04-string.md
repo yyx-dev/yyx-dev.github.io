@@ -84,7 +84,7 @@ s.clear();                    // 清空
 #### 增容机制
 
 <center>
-<img src="./04-string.assets/string类探究其增容机制示例.png" style="zoom:67%;" />
+<img src="./04-string.assets/string类探究其增容机制示例.png" style="zoom: 67%;" />
 </center>
 
 第一次增容从16变到32，为2倍增长。之后就是 48、71、106 ……，为1.5左右的增速。这是vs下的增容机制。
@@ -92,7 +92,7 @@ s.clear();                    // 清空
 Linux 下是每次按2倍增容。
 
 <center>
-<img src="./04-string.assets/Linux下测试string增容机制.png" style="zoom:80%;" />
+<img src="./04-string.assets/Linux下测试string增容机制.png" style="zoom: 60%;" />
 </center>
 
 <center>
@@ -141,7 +141,7 @@ s.resize(10);       // 修改有效字符个数为100个，删除了多余的内
 | `cbegin`,`cend`     | `begin`和`end`的 const 常量版本                              |
 
 <center>
-<img src="./04-string.assets/begin或end接口示例.png" style="zoom:67%;" />
+<img src="./04-string.assets/begin或end接口示例.png" style="zoom: 67%;" />
 </center>
 
 迭代器是专门为迭代遍历容器的一种机制。迭代器是一个对象，可以指向容器中的某个元素，通过迭代器就可以操作它指向的元素。所以迭代器可以想象成指针。
@@ -523,7 +523,7 @@ end 与 pos 比较，尤其是步进条件为 end–– ，当 pos == 0 时，en
 插入前须先将元素后移，end 从后向前遍历，始终在所移元素的后一个位置，利用str[i]=str[i-1]将元素后移。
 
 <center>
-<img src="./04-string.assets/string insert挪动数据.gif" style="zoom:50%;" />
+<img src="./04-string.assets/string insert挪动数据.gif" style="zoom: 50%;" />
 </center>
 
 [面试string类的一种正确写法 CoolShell](https://coolshell.cn/articles/10478.html)

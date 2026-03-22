@@ -25,7 +25,7 @@ result = total / 3
 
 #### 定义变量
 
-```cpp
+```python
 a = 10
 ```
 
@@ -562,7 +562,7 @@ a = [1, 'hello', True, [2, 3]]
 
 我们通过下标访问操作符`[]`获取列表中元素。使用方法和C/C++一致。
 
-```cpp
+```python
 print(a[0])
 print(a[1])
 print(a[3][0])

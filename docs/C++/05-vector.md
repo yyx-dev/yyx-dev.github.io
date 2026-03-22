@@ -230,7 +230,7 @@ vector<T>& operator=(vector<T> v)  /* pass by value */
 可以看出，下方的迭代器类型是上方的父类，也就是说**下方迭代器满足上方的所有要求**。
 
 <center>
-<img src="./05-vector.assets/迭代器分类关系.png" style="zoom:40%;" />
+<img src="./05-vector.assets/迭代器分类关系.png" style="zoom: 40%;" />
 </center>
 
 划分出不同的迭代器类型，是为了限制传入的迭代器，因为其必须满足要求才能完成接下来的函数。
@@ -351,7 +351,9 @@ iterator erase(iterator pos)
 }
 ```
 
-![](05-vector.assets/vector erase删除时略过元素示例.gif)
+<center>
+<img src="./05-vector.assets/vector_erase删除时略过元素示例.gif" style="zoom: 80%" />
+</center>
 
 - erase **挪动数据后 pos 指向元素会发生变化**，同样会导致迭代器失效。
 - 返回删除数据的下一个位置，通过返回值更新迭代器。
