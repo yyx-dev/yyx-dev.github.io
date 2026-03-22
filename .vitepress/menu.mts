@@ -23,12 +23,12 @@ export const menu = [
     { text: 'C语言深度剖析', link: '/docs/C/14-C语言深度剖析' },
   ]},
   { text: 'DS', items: [
-    { text: '算法复杂度', link: '/docs/数据结构/1-算法复杂度' },
-    { text: '线性表', link: '/docs/数据结构/2-线性表' },
-    { text: '栈和队列', link: '/docs/数据结构/3-栈和队列' },
-    { text: '二叉树', link: '/docs/数据结构/4-二叉树' },
-    { text: '二叉搜索树', link: '/docs/数据结构/5-二叉搜索树' },
-    { text: '八大排序', link: '/docs/数据结构/6-八大排序' },
+    { text: '算法复杂度', link: '/docs/DS/1-算法复杂度' },
+    { text: '线性表', link: '/docs/DS/2-线性表' },
+    { text: '栈和队列', link: '/docs/DS/3-栈和队列' },
+    { text: '二叉树', link: '/docs/DS/4-二叉树' },
+    { text: '二叉搜索树', link: '/docs/DS/5-二叉搜索树' },
+    { text: '八大排序', link: '/docs/DS/6-八大排序' },
   ]},
   { text: 'C++', items: [
     { text: '基础语法', link: '/docs/C++/01-基础语法' },
