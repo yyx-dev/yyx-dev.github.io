@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 import { menu } from './menu.mjs'
 
-export default defineConfig({
+export default withMermaid({
   base: '/',
 
   head: [
@@ -65,5 +66,9 @@ export default defineConfig({
 
   markdown: {
     math: true,
+  },
+  
+  mermaid: {
+    theme: 'default', // 或 'forest', 'dark'
   }
 })
