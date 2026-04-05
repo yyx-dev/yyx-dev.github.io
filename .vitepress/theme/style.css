@@ -147,6 +147,11 @@ html.dark .vp-doc img {
     filter: invert(1);
 }
 
+/* 避免sub标签增加行距 */
+.vp-doc sub {
+    line-height: normal;
+}
+
 /* 
 .vp-doc table {
   display: table;
