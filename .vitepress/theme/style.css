@@ -137,19 +137,31 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-/* BUG already fixed in commit 896e49a */
-.vp-doc img {
-  margin: 16px 0;
-}
-
 /* 暗色模式下，对图片应用反色滤镜 */
 html.dark .vp-doc img {
     filter: invert(1);
 }
 
-/* 避免sub标签增加行距 */
-.vp-doc sub {
-    line-height: normal;
+/* img标签缺少上边距 BUG already fixed in commit 896e49a */
+.vp-doc img {
+  margin: 16px 0;
+}
+
+/* 避免sub标签增加行距 BUG already fixed in commit 19357f9 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
 }
 
 /* 
