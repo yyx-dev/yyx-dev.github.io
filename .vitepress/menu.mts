@@ -1,53 +1,67 @@
 export const menu = [
-  { text: '408', items: [
-    { text: '数据结构', link: '/docs/408/1-数据结构' },
-    { text: '计算机组成原理', link: '/docs/408/2-计算机组成原理' },
-    { text: '操作系统', link: '/docs/408/3-操作系统' },
-    { text: '计算机网络', link: '/docs/408/4-计算机网络' },
-  ]},
-  { text: 'C', items: [
-    { text: '初识C语言', link: '/docs/C/00-初识C语言' },
-    { text: '分支循环', link: '/docs/C/01-分支循环' },
-    { text: '函数', link: '/docs/C/02-函数' },
-    { text: '数组', link: '/docs/C/03-数组' },
-    { text: '操作符', link: '/docs/C/04-操作符' },
-    { text: '指针', link: '/docs/C/05-指针' },
-    { text: '结构体', link: '/docs/C/06-结构体' },
-    { text: '数据的存储', link: '/docs/C/07-数据的存储' },
-    { text: '指针进阶', link: '/docs/C/08-指针进阶' },
-    { text: '字符串和内存函数', link: '/docs/C/09-字符串和内存函数' },
-    { text: '自定义类型', link: '/docs/C/10-自定义类型' },
-    { text: '动态内存管理', link: '/docs/C/11-动态内存管理' },
-    { text: '文件操作', link: '/docs/C/12-文件操作' },
-    { text: '程序预处理', link: '/docs/C/13-程序预处理' },
-    { text: 'C语言深度剖析', link: '/docs/C/14-C语言深度剖析' },
-  ]},
-  { text: 'DS', items: [
-    { text: '算法复杂度', link: '/docs/DS/1-算法复杂度' },
-    { text: '线性表', link: '/docs/DS/2-线性表' },
-    { text: '栈和队列', link: '/docs/DS/3-栈和队列' },
-    { text: '二叉树', link: '/docs/DS/4-二叉树' },
-    { text: '二叉搜索树', link: '/docs/DS/5-二叉搜索树' },
-    { text: '八大排序', link: '/docs/DS/6-八大排序' },
-  ]},
-  { text: 'C++', items: [
-    { text: '基础语法', link: '/docs/C++/01-基础语法' },
-    { text: '类和对象', link: '/docs/C++/02-类和对象' },
-    { text: '内存管理', link: '/docs/C++/03-内存管理' },
-    { text: 'string', link: '/docs/C++/04-string' },
-    { text: 'vector', link: '/docs/C++/05-vector' },
-    { text: 'list', link: '/docs/C++/06-list' },
-    { text: 'stack&queue', link: '/docs/C++/07-stack&queue' },
-    { text: '模板编程', link: '/docs/C++/08-模板编程' },
-    { text: 'IO流', link: '/docs/C++/09-IO流' },
-    { text: '继承', link: '/docs/C++/10-继承' },
-    { text: '多态', link: '/docs/C++/11-多态' },
-    { text: 'map&set', link: '/docs/C++/12-map&set' },
-    { text: '哈希', link: '/docs/C++/13-哈希' },
-    { text: 'C++11', link: '/docs/C++/14-c++11' },
-    { text: '异常和智能指针', link: '/docs/C++/15-异常和智能指针' },
-  ]},
-  { text: 'Linux', items: [
+  {
+    text: '408',
+    items: [
+      { text: '数据结构', link: '/docs/408/1-数据结构' },
+      { text: '计算机组成原理', link: '/docs/408/2-计算机组成原理' },
+      { text: '操作系统', link: '/docs/408/3-操作系统' },
+      { text: '计算机网络', link: '/docs/408/4-计算机网络' },
+    ]
+  },
+  {
+    text: 'C',
+    items: [
+      { text: '初识C语言', link: '/docs/C/00-初识C语言' },
+      { text: '分支循环', link: '/docs/C/01-分支循环' },
+      { text: '函数', link: '/docs/C/02-函数' },
+      { text: '数组', link: '/docs/C/03-数组' },
+      { text: '操作符', link: '/docs/C/04-操作符' },
+      { text: '指针', link: '/docs/C/05-指针' },
+      { text: '结构体', link: '/docs/C/06-结构体' },
+      { text: '数据的存储', link: '/docs/C/07-数据的存储' },
+      { text: '指针进阶', link: '/docs/C/08-指针进阶' },
+      { text: '字符串和内存函数', link: '/docs/C/09-字符串和内存函数' },
+      { text: '自定义类型', link: '/docs/C/10-自定义类型' },
+      { text: '动态内存管理', link: '/docs/C/11-动态内存管理' },
+      { text: '文件操作', link: '/docs/C/12-文件操作' },
+      { text: '程序预处理', link: '/docs/C/13-程序预处理' },
+      { text: 'C语言深度剖析', link: '/docs/C/14-C语言深度剖析' },
+    ]
+  },
+  {
+    text: 'DS',
+    items: [
+      { text: '算法复杂度', link: '/docs/DS/1-算法复杂度' },
+      { text: '线性表', link: '/docs/DS/2-线性表' },
+      { text: '栈和队列', link: '/docs/DS/3-栈和队列' },
+      { text: '二叉树', link: '/docs/DS/4-二叉树' },
+      { text: '二叉搜索树', link: '/docs/DS/5-二叉搜索树' },
+      { text: '八大排序', link: '/docs/DS/6-八大排序' },
+    ]
+  },
+  {
+    text: 'C++',
+    items: [
+      { text: '基础语法', link: '/docs/C++/01-基础语法' },
+      { text: '类和对象', link: '/docs/C++/02-类和对象' },
+      { text: '内存管理', link: '/docs/C++/03-内存管理' },
+      { text: 'string', link: '/docs/C++/04-string' },
+      { text: 'vector', link: '/docs/C++/05-vector' },
+      { text: 'list', link: '/docs/C++/06-list' },
+      { text: 'stack&queue', link: '/docs/C++/07-stack&queue' },
+      { text: '模板编程', link: '/docs/C++/08-模板编程' },
+      { text: 'IO流', link: '/docs/C++/09-IO流' },
+      { text: '继承', link: '/docs/C++/10-继承' },
+      { text: '多态', link: '/docs/C++/11-多态' },
+      { text: 'map&set', link: '/docs/C++/12-map&set' },
+      { text: '哈希', link: '/docs/C++/13-哈希' },
+      { text: 'C++11', link: '/docs/C++/14-c++11' },
+      { text: '异常和智能指针', link: '/docs/C++/15-异常和智能指针' },
+    ]
+  },
+  {
+    text: 'Linux',
+    items: [
       { text: '基础指令', link: '/docs/Linux/01-基础指令' },
       { text: '权限管理', link: '/docs/Linux/02-权限管理' },
       { text: '开发工具', link: '/docs/Linux/03-开发工具' },
@@ -63,8 +77,11 @@ export const menu = [
       { text: '传输层', link: '/docs/Linux/13-传输层' },
       { text: '网络层链路层', link: '/docs/Linux/14-网络层链路层' },
       { text: '高级IO', link: '/docs/Linux/15-高级IO' },
-  ]},
-  { text: 'MySQL', items: [
+    ]
+  },
+  {
+    text: 'MySQL',
+    items: [
       { text: '基本概念和基础操作', link: '/docs/MySQL/1-基本概念和基础操作' },
       { text: '数据类型和表的约束', link: '/docs/MySQL/2-数据类型和表的约束' },
       { text: '基本操作和内置函数', link: '/docs/MySQL/3-基本操作和内置函数' },
@@ -72,19 +89,28 @@ export const menu = [
       { text: '用户权限和语言接口', link: '/docs/MySQL/5-用户权限和语言接口' },
       { text: '索引', link: '/docs/MySQL/6-索引' },
       { text: '事务', link: '/docs/MySQL/7-事务' },
-  ]},
-  { text: 'Project', items: [
-    { text: 'HTTP服务器', link: '/docs/Project/1-HTTP服务器' },
-    { text: 'Boost搜索引擎', link: '/docs/Project/2-Boost搜索引擎' },
-    { text: '负载均衡式OJ', link: '/docs/Project/3-负载均衡式OJ' },
-    { text: '同异步日志系统', link: '/docs/Project/4-同异步日志系统' },
-    { text: '网络云备份', link: '/docs/Project/5-网络云备份' },
-  ]},
-  { text: 'Scripts', items: [
-    { text: 'CMake', link: '/docs/Scripts/CMake' },
-    { text: 'Git', link: '/docs/Scripts/Git' },
-    { text: 'Lua', link: '/docs/Scripts/Lua' },
-    { text: 'Python', link: '/docs/Scripts/Python' },
-    { text: 'Shell', link: '/docs/Scripts/Shell' },
-  ]},
+    ]
+  },
+  /*
+  {
+    text: 'Project',
+    items: [
+      { text: 'HTTP服务器', link: '/docs/Project/1-HTTP服务器' },
+      { text: 'Boost搜索引擎', link: '/docs/Project/2-Boost搜索引擎' },
+      { text: '负载均衡式OJ', link: '/docs/Project/3-负载均衡式OJ' },
+      { text: '同异步日志系统', link: '/docs/Project/4-同异步日志系统' },
+      { text: '网络云备份', link: '/docs/Project/5-网络云备份' },
+    ]
+  },
+  {
+    text: 'Scripts',
+    items: [
+      { text: 'CMake', link: '/docs/Scripts/CMake' },
+      { text: 'Git', link: '/docs/Scripts/Git' },
+      { text: 'Lua', link: '/docs/Scripts/Lua' },
+      { text: 'Python', link: '/docs/Scripts/Python' },
+      { text: 'Shell', link: '/docs/Scripts/Shell' },
+    ]
+  },
+  */
 ]
