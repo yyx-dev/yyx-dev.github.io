@@ -742,9 +742,13 @@ int height(node* root)
 假设黑节点数量为$X$，则路径的长度满足 $X≤path\_length≤2X$，即红黑树的高度满足 $X≤h≤2X$。
 
 首先完全二叉树的高度和节点数量的关系是 $2^h-1=N$。推导到红黑树的节点个数满足：
+
 $$
-2^{X}-1≤N≤2^{2X}-1\\
-=> \frac{1}{2}×log_2N≤X≤log_2N \quad => \quad log_4N≤X≤log_2N
+\begin{aligned}
+2^{X}-1≤N≤2^{2X}-1 \\
+\frac{1}{2}×log_2N≤X≤log_2N \\
+\quad log_4N≤X≤log_2N
+\end{aligned}
 $$
 
 **红黑树的搜索效率为 $logN≤O(N)≤2logN$**。
