@@ -34,12 +34,12 @@ export default withMermaid({
       options: {
         miniSearch: {
           options: {
-            tokenize: (str) => str.split(/(?:)/u), 
+            tokenize: (str: string) => str.split(/(?:)/u),
           },
           searchOptions: {
             prefix: true,
             fuzzy: 0.2,
-            combineWith: 'AND' 
+            combineWith: 'AND'
           }
         },
         translations: {
@@ -67,8 +67,16 @@ export default withMermaid({
   markdown: {
     math: true,
   },
-  
+
   mermaid: {
-    theme: 'default', // 或 'forest', 'dark'
-  }
+    theme: 'default',
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: [
+        'debug',
+      ]
+    }
+  },
 })
