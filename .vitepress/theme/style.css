@@ -137,6 +137,16 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* default style extend : h5 h6 style */
+.vp-doc h5 {
+  margin-top: 16px;
+}
+
+.vp-doc h6 {
+  margin-top: 8px;
+  color: var(--vp-c-text-2);
+}
+
 /* 暗色模式下，对图片应用反色滤镜 */
 html.dark .vp-doc img {
     filter: invert(1);
@@ -164,7 +174,8 @@ sup {
   top: -0.5em;
 }
 
-/* 
+
+/*
 .vp-doc table {
   display: table;
   width: 100%;
