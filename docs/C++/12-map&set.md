@@ -266,9 +266,7 @@ for (auto& kv: count_map)
 - 该树的左右子树都是AVL树，
 - **左右子树的高度之差（简称平衡因子）的绝对值不超过1**。
 
-<center>
 <img src="./12-map&set.assets/AVL树结构.png" style="zoom: 30%;" />
-</center>
 
 > 使用平衡因子只是AVL树的一种实现方式。
 
@@ -307,9 +305,7 @@ AVL是一棵严格平衡的二叉搜索树，可以保证查询效率 $O(logn)$ 
 
 如图所示，**插入节点会改变新节点到根的路径上所有节点的平衡因子**。所以要先更新平衡因子，再对树旋转处理。
 
-<center>
 <img src="./12-map&set.assets/AVL插入破坏平衡.png" style="zoom: 30%;" />
-</center>
 
 如果插入在父节点的左边，父节点的平衡因子要减1；如果插入在父节点的右边，父节点的平衡因子要加1。
 
@@ -317,9 +313,7 @@ AVL是一棵严格平衡的二叉搜索树，可以保证查询效率 $O(logn)$ 
 2. 如果父节点的平衡因子更新为1/-1，说明所在树高度发生变化；
 3. 如果父节点的平衡因子更新为2/-2，说明子树已经不平衡，需要旋转处理。
 
-<center>
 <img src="./12-map&set.assets/AVL插入示例.svg" style="zoom: 30%;" />
-</center>
 
 ```cpp
 bool Insert(const pair<K, V>& kv)
@@ -400,9 +394,7 @@ bool Insert(const pair<K, V>& kv)
 
 > 先看如图所示的树结构的抽象图，节点下方的矩形代表多种可能，分别是a，b，c子树，其高度都是h。
 
-<center>
 <img src="./12-map&set.assets/二叉树抽象图解释.png" style="zoom: 30%;" />
-</center>
 
 旋转的方式有四种，目的是<u>在搜索树规则下平衡二叉树，平衡的结果就是树的整体高度减1</u>，提高搜索效率。
 
@@ -410,25 +402,19 @@ bool Insert(const pair<K, V>& kv)
 
 ##### 右单旋
 
-<center>
 <img src="./12-map&set.assets/AVL右单旋示例.png" style="zoom: 30%;" />
-</center>
 
 > 左树新增节点，高度+1，导致父节点bf=–1，爷节点bf=–2。此时平衡被破坏，就会引发右单旋。
 
 **右单旋就是把`bf=-2`的节点旋转至`bf=-1`的节点的右子树上**。此时，`bf=-1`的节点是否存在右子树，有两种情况但可以统一处理。
 
-<center>
 <img src="./12-map&set.assets/AVL树右单旋两种情况示例.png" style="zoom: 30%;" />
-</center>
 
 1. 先把`bf=-1`的节点的右子树链接到`bf=-2`的节点的左边，
 2. 再将`bf=-2`的节点链接到`bf=-1`的节点的右边。
 3. 最后`bf=-1`的节点作当前树的根，和整棵树链接。
 
-<center>
 <img src="./12-map&set.assets/AVL树右单旋.gif" style="zoom: 30%;" />
-</center>
 
 ```cpp
 void rotate_r(node* parent)
@@ -463,29 +449,21 @@ void rotate_r(node* parent)
 }
 ```
 
-<center>
 <img src="./12-map&set.assets/AVL右单旋过程.png" style="zoom: 30%;" />
-</center>
 
 ##### 左单旋
 
-<center>
 <img src="./12-map&set.assets/AVL左单旋示例.png" style="zoom: 30%;" />
-</center>
 
 左单旋和右单旋正好相反。**左单旋就是把`bf=2`的节点旋转至`bf=1`的节点的左子树上**。
 
-<center>
 <img src="./12-map&set.assets/AVL树左单旋两种情况示例.png" style="zoom: 30%;" />
-</center>
 
 1. 先把`bf=1`的节点的左子树链接到`bf=2`的节点的右边。
 2. 再将`bf=2`的节点链接到`bf=1`的节点的左边。
 3. 最后`bf=-1`的节点作当前树的根，和整棵树链接。
 
-<center>
 <img src="./12-map&set.assets/AVL树左单旋.gif" style="zoom: 30%;" />
-</center>
 
 ```cpp
 void rotate_l(node* parent)
@@ -523,13 +501,9 @@ void rotate_l(node* parent)
 
 左右双旋的情况如下图所示，<u>对于下半部分来说左边高，对于上半部分来说右边高</u>。
 
-<center>
 <img src="./12-map&set.assets/AVL树左右双旋简单示例.png" style="zoom: 30%;" />
-</center>
 
-<center>
 <img src="./12-map&set.assets/AVL树左右双旋示例.png" style="zoom: 30%;" />
-</center>
 
 1. **先以`bf=1`的节点为轴进行左单旋**；
 2. **再以`bf=-2`的节点为轴进行右单旋**。
@@ -554,9 +528,7 @@ void RotateLR(Node* parent) { // 双旋就是由两个单旋组成
 | 新节点在`subLR`的左边 | `subLR.bf=-1` | `parent.bf=0`,`subL.bf=-1`,`subLR.bf=0` |
 | 新节点在`subLR`的右边 | `subLR.bf=1`  | `parent.bf=1`,`subL.bf=0`,`subLR.bf=0`  |
 
-<center>
 <img src="./12-map&set.assets/AVL树左右双旋插入情况分类.png" style="zoom: 30%;" />
-</center>
 
 ```cpp
 void rotate_lr(node* parent)
@@ -601,13 +573,9 @@ void rotate_lr(node* parent)
 1. **先以`bf=-1`的节点为轴进行右单旋**；
 2. **再以`bf=2`的节点为轴进行左单旋**。
 
-<center>
 <img src="./12-map&set.assets/AVL树右左双旋简单示例.png" style="zoom: 30%;" />
-</center>
 
-<center>
 <img src="./12-map&set.assets/AVL树右左双旋示例.png" style="zoom: 30%;" />
-</center>
 
 ###### 更新平衡因子
 
@@ -619,9 +587,7 @@ void rotate_lr(node* parent)
 | 新节点在`subRL`的左边 | `subRL.bf=-1` | `parent.bf=0`,`subR.bf=1`,`subRL.bf=0`  |
 | 新节点在`subRL`的右边 | `subRL.bf=1`  | `parent.bf=-1`,`subR.bf=0`,`subRL.bf=0` |
 
-<center>
 <img src="./12-map&set.assets/AVL树右左双旋插入情况分类.png" style="zoom: 30%;" />
-</center>
 
 ```cpp
 void rotate_rl(node* parent)
@@ -722,9 +688,7 @@ int height(node* root)
 
 通过限制整条从根到叶路径上的结点的着色方式，**确保整棵树中最长路径的长度不超过最短路径的两倍，因而是接近平衡的**。
 
-<center>
 <img src="./12-map&set.assets/红黑树示例.png" style="zoom: 30%;" />
-</center>
 
 ##### 红黑树的性质
 
@@ -839,9 +803,7 @@ p为红，g为黑，**u为红**
 - **将父节点叔节点变黑，爷节点变红。**
 - `cur`指向爷节点，继续向上遍历。直到父节点为空或条件不满足。
 
-<center>
 <img src="./12-map&set.assets/红黑树父叔为红爷为黑变色情况具象图.png" style="zoom: 30%;" />
-</center>
 
 ```cpp
 if (grandpa->_left == parent) // 父在左
@@ -895,9 +857,7 @@ p为红，g为黑，**u为黑或不存在**。
 
 旋转后需要改色，**上面的一个改为黑色，下面的两个改红色。**
 
-<center>
 <img src="./12-map&set.assets/红黑树旋转示例图.png" style="zoom: 30%;" />
-</center>
 
 ```cpp
 if (grandpa->_left == parent)
@@ -1115,9 +1075,7 @@ void rotate_r(node* parent)
 }
 ```
 
-<center>
 <img src="./12-map&set.assets/红黑树两个实例.png" style="zoom: 33%;" />
-</center>
 
 #### 红黑树的验证
 
@@ -1166,9 +1124,7 @@ bool check(node* root, int& mark, int cnt)
 
 > map和set如何复用同一棵红黑树呢？
 
-<center>
 <img src="./12-map&set.assets/红黑树兼容mapset结构设计.png" style="zoom: 40%;" />
-</center>
 
 ### 3.1 整体设计
 
@@ -1478,9 +1434,7 @@ struct __rb_tree_iterator
 
 库中是将根节点带个头节点，头节点的左孩子指向整个树的最左节点，右孩子指向整个树的最右节点；
 
-<center>
 <img src="./12-map&set.assets/MapSet迭代器beginend位置实现.png" style="zoom: 30%;" />
-</center>
 
 - 如果节点的右子树不为空，下一个位置就是节点的**右子树的最左节点**。
 - 如果节点的右子树为空，向上遍历，找到某个节点，满足该节点是其父亲的左，该父亲就是下一个位置。
@@ -1541,9 +1495,7 @@ self& operator--()
 }
 ```
 
-<center>
 <img src="./12-map&set.assets/MapSet迭代器自增逻辑动例.gif" style="zoom: 30%;" />
-</center>
 
 ### 3.3 set
 

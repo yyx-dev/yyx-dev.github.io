@@ -66,7 +66,7 @@ add_executable(animal main.cc ${animal_sources})
 └── main.cc
 
 # animal.cmake
-set(animal_sources animal/dog.cc animal/cat.cc) 
+set(animal_sources animal/dog.cc animal/cat.cc)
 # CMakeLists.txt
 project(animal)
 include(animal/animal.cmake)
@@ -102,4 +102,3 @@ add_executable(animal_test main.cc)
 target_link_libraries(animal_test PUBLIC animal)
 target_include_directories(animal_test PUBLIC ${PROJECT_SOURCE_DIR}/animal)
 ```
-

@@ -137,7 +137,7 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-/* default style extend : h5 h6 style */
+/* h5 h6 标题风格 */
 .vp-doc h5 {
   margin-top: 16px;
 }
@@ -149,12 +149,12 @@
 
 /* 暗色模式下，对图片应用反色滤镜 */
 html.dark .vp-doc img {
-    filter: invert(1);
+  filter: invert(1);
 }
 
-/* img标签缺少上边距 BUG already fixed in commit 896e49a */
+/* 图片居中显示 img标签缺少上边距 BUG already fixed in commit 896e49a */
 .vp-doc img {
-  margin: 16px 0;
+  margin: auto;
 }
 
 /* 避免sub标签增加行距 BUG already fixed in commit 19357f9 */
@@ -174,10 +174,7 @@ sup {
   top: -0.5em;
 }
 
-
-/*
-.vp-doc table {
-  display: table;
-  width: 100%;
+.vp-doc h3,
+.vp-doc h4 {
+  margin-bottom: 16px;
 }
-*/

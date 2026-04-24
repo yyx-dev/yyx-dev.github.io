@@ -66,6 +66,9 @@ export default withMermaid({
 
   markdown: {
     math: true,
+    image: {
+      lazyLoading: true,
+    },
   },
 
   mermaid: {

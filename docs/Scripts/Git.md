@@ -54,7 +54,7 @@ git reset --soft  # 回退版本库
 					--mixed # 回退版本库和暂存区 默认选项
 					--hard  # 回退版本库、暂存区和工作区
 							HEAD^
-					
+
 git checkout -- test.txt # 将工作区文件退回到上一次add或commit
 ```
 
@@ -123,7 +123,7 @@ git branch -D dev # 强制删除
 ```shell
 git stash # 暂时存储
 git stash list # 查看stash的内容
-git stash pop # 
+git stash pop #
 ```
 
 查看远端分支

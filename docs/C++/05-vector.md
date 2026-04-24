@@ -37,9 +37,7 @@ v.resize(100, 1); // 有效元素个数变为100,新增元素初始化为1
 v.resize(10);     // 有效元素个数变为10
 ```
 
-<center>
 <img src="./05-vector.assets/vector增容具体情况.png" style="zoom: 67%;" />
-</center>
 
 > 由图可知，vs下vector按1.5倍增容。
 
@@ -114,9 +112,7 @@ template <class InputIter, class T>
 
 ## 2. vector的模拟实现
 
-<center>
 <img src="./05-vector.assets/vector结构图.png" style="zoom: 67%;" />
-</center>
 
 ### 2.1 类的定义
 
@@ -229,9 +225,7 @@ vector<T>& operator=(vector<T> v)  /* pass by value */
 
 可以看出，下方的迭代器类型是上方的父类，也就是说**下方迭代器满足上方的所有要求**。
 
-<center>
 <img src="./05-vector.assets/迭代器分类关系.png" style="zoom: 40%;" />
-</center>
 
 划分出不同的迭代器类型，是为了限制传入的迭代器，因为其必须满足要求才能完成接下来的函数。
 
@@ -257,9 +251,7 @@ v.push_back("11111111111111"); // 增容浅拷贝
 1. 若 vector 存储的是内置类型，则浅拷贝没问题。
 2. 若 vector 存储的是自定义类型，浅拷贝使得新旧变量指向同一块空间。深拷贝调用拷贝构造或者赋值重载。
 
-<center>
 <img src="./05-vector.assets/memcpy浅拷贝问题.png" style="zoom: 40%;" />
-</center>
 
 ```cpp
 void reserve(size_t n)
@@ -351,9 +343,7 @@ iterator erase(iterator pos)
 }
 ```
 
-<center>
 <img src="./05-vector.assets/vector_erase删除时略过元素示例.gif" style="zoom: 80%" />
-</center>
 
 - erase **挪动数据后 pos 指向元素会发生变化**，同样会导致迭代器失效。
 - 返回删除数据的下一个位置，通过返回值更新迭代器。
