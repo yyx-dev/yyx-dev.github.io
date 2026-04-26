@@ -154,7 +154,7 @@ html.dark .vp-doc img {
 
 /* 图片居中显示 img标签缺少上边距 BUG already fixed in commit 896e49a */
 .vp-doc img {
-  margin: auto;
+  margin: 16px auto;
 }
 
 /* 避免sub标签增加行距 BUG already fixed in commit 19357f9 */
