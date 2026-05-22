@@ -1,32 +1,26 @@
-import { defineConfig } from 'vitepress'
-import { withMermaid } from 'vitepress-plugin-mermaid'
-import { menu } from './menu.mjs'
+import { defineConfig } from "vitepress";
+import { withMermaid } from "vitepress-plugin-mermaid";
+import { menu } from "./menu.mjs";
 
 export default withMermaid({
-  base: '/',
+  base: "/",
 
-  head: [
-    [ "link", { rel: "icon", href: "/docs.png" }],
-  ],
+  head: [["link", { rel: "icon", href: "/docs.png" }]],
 
   title: "杨宇曦的博客",
   description: "记录学习积累内容",
 
   themeConfig: {
+    outlineTitle: "目录大纲",
+    outline: [2, 3],
 
-    outlineTitle: '目录大纲',
-    outline: [2,3],
-
-    nav: [
-      { text: '首页', link: '/' },
-      ...menu,
-    ],
+    nav: [{ text: "首页", link: "/" }, ...menu],
 
     sidebar: menu,
 
     socialLinks: [
-      { icon: 'gitee', link: 'https://gitee.com/yyx_dev' },
-      { icon: 'github', link: 'https://github.com/yyx-dev' }
+      { icon: "gitee", link: "https://gitee.com/yyx_dev" },
+      { icon: "github", link: "https://github.com/yyx-dev" },
     ],
 
     search: {
@@ -39,8 +33,8 @@ export default withMermaid({
           searchOptions: {
             prefix: true,
             fuzzy: 0.2,
-            combineWith: 'AND'
-          }
+            combineWith: "AND",
+          },
         },
         translations: {
           button: {
@@ -60,26 +54,25 @@ export default withMermaid({
     },
 
     footer: {
-      copyright: 'Released under the MIT License.<br>Copyright © 2020-present Yuxi Yang',
-    }
+      copyright:
+        "Released under the MIT License.<br>Copyright © 2020-present Yuxi Yang",
+    },
   },
 
   markdown: {
     math: true,
     image: {
-      lazyLoading: true,
+      lazyLoading: false,
     },
   },
 
   mermaid: {
-    theme: 'default',
+    theme: "default",
   },
 
   vite: {
     optimizeDeps: {
-      include: [
-        'debug',
-      ]
-    }
+      include: ["debug"],
+    },
   },
-})
+});
