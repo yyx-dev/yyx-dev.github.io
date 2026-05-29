@@ -4,6 +4,7 @@ import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import emphasis from "./components/emphasis.vue";
 import warning from "./components/warning.vue";
+import number from "./components/number.vue"
 import tip from "./components/tip.vue";
 import add from "./components/add.vue";
 import super_emphasis from "./components/super-emphasis.vue";
@@ -26,5 +27,6 @@ export default {
     app.component("semp", super_emphasis);
     app.component("swarn", super_warning);
     app.component("sadd", super_add);
+    app.component("num", number);
   },
 } satisfies Theme;

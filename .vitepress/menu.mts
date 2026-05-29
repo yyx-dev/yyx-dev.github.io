@@ -91,10 +91,6 @@ export const menu = [
       { text: "事务", link: "/docs/MySQL/7-事务" },
     ],
   },
-  {
-    text: "Other",
-    items: [{ text: "常用颜色", link: "/docs/Other/color.md" }],
-  },
   /*
   {
     text: 'Project',

@@ -8,10 +8,10 @@ if not exist "node_modules\vitepress" (
     call npm install
 )
 
-set wait_seconds=20
+set wait_seconds=8
 wmic path Win32_Battery get BatteryStatus 2>nul | find "2" >nul
 if %errorlevel% equ 0 (
-    set wait_seconds=14
+    set wait_seconds=8
 )
 
 start /b cmd /c "timeout /t %wait_seconds% /nobreak >nul && start http://localhost:5173"
