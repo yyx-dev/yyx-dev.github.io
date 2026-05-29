@@ -1,8 +1,7 @@
 import { defineConfig } from "vitepress";
-import { withMermaid } from "vitepress-plugin-mermaid";
 import { menu } from "./menu.mjs";
 
-export default withMermaid({
+export default defineConfig({
   base: "/",
 
   head: [["link", { rel: "icon", href: "/docs.png" }]],
@@ -66,13 +65,4 @@ export default withMermaid({
     },
   },
 
-  mermaid: {
-    theme: "default",
-  },
-
-  vite: {
-    optimizeDeps: {
-      include: ["debug"],
-    },
-  },
 });
