@@ -4,6 +4,10 @@ setlocal enabledelayedexpansion
 
 title VitePress Auto-Restart
 
+if not exist "node_modules\vitepress" (
+    call npm install
+)
+
 set wait_seconds=20
 wmic path Win32_Battery get BatteryStatus 2>nul | find "2" >nul
 if %errorlevel% equ 0 (
