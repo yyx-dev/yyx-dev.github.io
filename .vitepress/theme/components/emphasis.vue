@@ -1,11 +1,11 @@
 <template>
-    <span class="emphasis">
-        <slot />
-    </span>
+  <span class="emphasis">
+    <slot />
+  </span>
 </template>
 
 <style scoped>
 .emphasis {
-    background-color: #ffeb3b;
+  background-color: var(--emphasis-bg);
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
-    <span class="tip">
-        <slot />
-    </span>
+  <span class="tip">
+    <slot />
+  </span>
 </template>
 
 <style scoped>
 .tip {
-    background-color: #cce5ff;
-    color: #0d47a1;
+  background-color: var(--tip-bg);
+  color: var(--tip-color);
 }
 </style>
