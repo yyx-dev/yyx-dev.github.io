@@ -1,11 +1,11 @@
 <template>
-    <span class="warning">
-        <slot />
-    </span>
+  <span class="warning">
+    <slot />
+  </span>
 </template>
 
 <style scoped>
 .warning {
-    background-color: #ffcccc;
+  background-color: var(--warning-bg);
 }
 </style>

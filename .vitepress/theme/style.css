@@ -137,6 +137,40 @@
     --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Component: Add Emphasis Warning Number ...
+ * -------------------------------------------------------------------------- */
+
+:root {
+    --add-bg: #e8f5e9;
+    --emphasis-bg: #ffeb3b;
+    --number-color: #e67e22;
+    --super-add-bg: #e8f5e9;
+    --super-add-color: #2e7d32;
+    --super-emphasis-bg: #fffacd;
+    --super-emphasis-color: #d2691e;
+    --super-warning-bg: #ffebee;
+    --super-warning-color: #c0392b;
+    --tip-bg: #cce5ff;
+    --tip-color: #0d47a1;
+    --warning-bg: #ffcccc;
+}
+
+.dark {
+    --add-bg: #1b5e20; /* 深绿色背景 */
+    --emphasis-bg: #f9a825; /* 深黄色背景 */
+    --number-color: #f39c12; /* 亮橙色 */
+    --super-add-bg: #1b5e20; /* 深绿色背景 */
+    --super-add-color: #81c784; /* 浅绿色文字 */
+    --super-emphasis-bg: #7d6608; /* 深黄褐色背景 */
+    --super-emphasis-color: #f5b041; /* 浅橙色文字 */
+    --super-warning-bg: #7b241c; /* 深红棕色背景 */
+    --super-warning-color: #e74c3c; /* 亮红色文字 */
+    --tip-bg: #0d47a1; /* 深蓝色背景 */
+    --tip-color: #bbdef5; /* 浅蓝色文字 */
+    --warning-bg: #7b2c2c; /* 深红色背景 */
+}
+
 /* h5 h6 标题风格 */
 .vp-doc h5 {
     margin-top: 16px;
@@ -149,7 +183,7 @@
 
 /* 暗色模式下，对图片应用反色滤镜 */
 html.dark .vp-doc img {
-    filter: invert(1);
+    filter: invert(0.894);
 }
 
 /* 图片居中显示 img标签缺少上边距 BUG already fixed in commit 896e49a */

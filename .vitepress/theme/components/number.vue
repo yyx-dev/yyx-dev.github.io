@@ -6,6 +6,6 @@
 
 <style scoped>
 .number {
-  color: #e67e22;
+  color: var(--number-bg);
 }
 </style>
