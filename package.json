@@ -12,7 +12,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "medium-zoom": "^1.1.0",
     "vitepress": "^1.6.4",
-    "markdown-it-mathjax3": "^4.3.2"
+    "vitepress-plugin-lightbox": "^1.0.3"
   }
 }

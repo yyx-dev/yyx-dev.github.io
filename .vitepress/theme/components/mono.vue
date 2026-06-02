@@ -1,11 +1,11 @@
 <template>
-  <span class="add">
+  <span class="mono">
     <slot />
   </span>
 </template>
 
 <style scoped>
-.add {
-  background-color: var(--add-bg);
+.mono {
+  font-family: var(--vp-font-family-mono);
 }
 </style>

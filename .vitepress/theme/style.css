@@ -143,6 +143,7 @@
 
 :root {
     --add-bg: #e8f5e9;
+    --adjunct-bg: #f5f5f5;
     --emphasis-bg: #ffeb3b;
     --number-color: #e67e22;
     --super-add-bg: #e8f5e9;
@@ -158,6 +159,7 @@
 
 .dark {
     --add-bg: #1b5e20; /* 深绿色背景 */
+    --adjunct-bg: #2d2d2d; /* 深灰色背景 */
     --emphasis-bg: #f9a825; /* 深黄色背景 */
     --number-color: #f39c12; /* 亮橙色 */
     --super-add-bg: #1b5e20; /* 深绿色背景 */
@@ -185,6 +187,11 @@
 html.dark .vp-doc img {
     filter: invert(0.894);
 }
+
+html.dark .medium-zoom-image {
+    filter: invert(0.894);
+}
+
 
 /* 图片居中显示 img标签缺少上边距 BUG already fixed in commit 896e49a */
 .vp-doc img {

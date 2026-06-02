@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import { menu } from "./menu.mjs";
+import lightbox from "vitepress-plugin-lightbox"
 
 export default defineConfig({
   base: "/",
@@ -62,6 +63,9 @@ export default defineConfig({
     math: true,
     image: {
       lazyLoading: false,
+    },
+    config: (md) => {
+      md.use(lightbox, {});
     },
   },
 
