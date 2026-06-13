@@ -19,8 +19,8 @@ export default defineConfig({
     sidebar: menu,
 
     socialLinks: [
-      { icon: "gitee", link: "https://gitee.com/yyx_dev" },
       { icon: "github", link: "https://github.com/yyx-dev" },
+      { icon: "gitee", link: "https://gitee.com/yyx_dev" },
     ],
 
     search: {
