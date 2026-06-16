@@ -3,10 +3,9 @@ import { h } from "vue";
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import add from "./components/add.vue";
-import adjunct from "./components/adjunct.vue";
 import emphasis from "./components/emphasis.vue";
 import mono from "./components/mono.vue";
-import number from "./components/number.vue"
+import number from "./components/number.vue";
 import super_add from "./components/super-add.vue";
 import super_emphasis from "./components/super-emphasis.vue";
 import super_warning from "./components/super-warning.vue";
@@ -21,7 +20,6 @@ export default {
   Layout,
   enhanceApp({ app, router, siteData }) {
     app.component("add", add);
-    app.component("adj", adjunct);
     app.component("emp", emphasis);
     app.component("mono", mono);
     app.component("num", number);
