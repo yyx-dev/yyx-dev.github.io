@@ -155,6 +155,7 @@
     --tip-bg: #cce5ff;
     --tip-color: #0d47a1;
     --warning-bg: #ffcccc;
+    --vp-font-family-question: "Times New Roman", "楷体";
 }
 
 .dark {
@@ -191,7 +192,6 @@ html.dark .vp-doc img {
 html.dark .medium-zoom-image {
     filter: invert(0.894);
 }
-
 
 /* 图片居中显示 img标签缺少上边距 BUG already fixed in commit 896e49a */
 .vp-doc img {

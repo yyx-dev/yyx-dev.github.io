@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import { menu } from "./menu.mjs";
-import lightbox from "vitepress-plugin-lightbox"
+import lightbox from "vitepress-plugin-lightbox";
+import container from "markdown-it-container";
 
 export default defineConfig({
   base: "/",
@@ -66,7 +67,21 @@ export default defineConfig({
     },
     config: (md) => {
       md.use(lightbox, {});
+      md.use(container, "analysis", {
+        validate: function (params) {
+          return params.trim().match(/^analysis\s*(.*)$/);
+        },
+        render: function (tokens, idx) {
+          const token = tokens[idx];
+          const title = token.info.trim().slice("analysis".length).trim();
+
+          if (token.nesting === 1) {
+            return `<analysis title="${title}">`;
+          } else {
+            return `</analysis>`;
+          }
+        },
+      });
     },
   },
-
 });
