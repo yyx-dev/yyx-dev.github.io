@@ -5,9 +5,9 @@
     </summary>
     <div class="analysis-content">
       <slot />
+      <hr/>
     </div>
   </details>
-  <hr/>
 </template>
 
 <script setup>
