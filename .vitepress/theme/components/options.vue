@@ -1,7 +1,6 @@
 <template>
   <div class="options" :style="{ width: width }">
-    <span v-for="option in options" :key="option">
-      {{ option }}
+    <span v-for="option in options" :key="option" v-html="option">
     </span>
   </div>
 </template>
