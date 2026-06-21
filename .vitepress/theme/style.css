@@ -155,7 +155,7 @@
     --tip-bg: #cce5ff;
     --tip-color: #0d47a1;
     --warning-bg: #ffcccc;
-    --vp-font-family-question: "Times New Roman", "楷体";
+    --vp-font-family-question: "Times New Roman", "楷体", "STKaiti";
 }
 
 .dark {
