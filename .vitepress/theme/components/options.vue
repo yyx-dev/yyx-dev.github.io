@@ -1,12 +1,14 @@
 <template>
-  <div class="options" :style="{ width: width }">
+  <div class="options" :style="{ width: computedWidth }">
     <span v-for="option in options" :key="option" v-html="option">
     </span>
   </div>
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   options: {
     type: Array,
     required: true,
@@ -14,7 +16,24 @@ defineProps({
   },
   width: {
     type: String,
-    default: '85%'
+    default: null
+  }
+})
+
+const computedWidth = computed(() => {
+  if (props.width !== null) {
+    return props.width
+  }
+
+  const count = props.options.length
+  if (count === 1) {
+    return '100%'
+  } else if (count === 2) {
+    return '70%'
+  } else if (count === 4) {
+    return '85%'
+  } else {
+    return '85%'
   }
 })
 </script>
