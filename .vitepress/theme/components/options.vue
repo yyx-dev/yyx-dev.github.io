@@ -29,7 +29,7 @@ const computedWidth = computed(() => {
   if (count === 1) {
     return '100%'
   } else if (count === 2) {
-    return '70%'
+    return '75%'
   } else if (count === 4) {
     return '85%'
   } else {
@@ -42,6 +42,7 @@ const computedWidth = computed(() => {
 .options {
   display: flex;
   justify-content: space-between;
+  padding-left: 10px;
   font-family: var(--vp-font-family-question);
 }
 </style>
