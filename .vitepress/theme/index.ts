@@ -12,6 +12,7 @@ import question from "./components/question.vue";
 import super_add from "./components/super-add.vue";
 import super_emphasis from "./components/super-emphasis.vue";
 import super_warning from "./components/super-warning.vue";
+import table_head from "./components/table-head.vue";
 import tip from "./components/tip.vue";
 import warning from "./components/warning.vue";
 
@@ -32,6 +33,7 @@ export default {
     app.component("sadd", super_add);
     app.component("semp", super_emphasis);
     app.component("swarn", super_warning);
+    app.component("thd", table_head);
     app.component("tip", tip);
     app.component("warn", warning);
   },
