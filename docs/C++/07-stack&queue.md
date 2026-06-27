@@ -631,7 +631,7 @@ class priority_queue {
 #include <iostream>
 #include <vector>
 
-namespace var(--vp-c-bg-soft)
+namespace
 {
 template<class T>
 struct less

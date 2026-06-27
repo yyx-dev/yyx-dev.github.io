@@ -285,7 +285,7 @@ struct AA
     int _a2;
 };
 
-void var(--vp-c-bg-soft)_list()
+void test_list()
 {
     list<AA> lt;
     lt.push_back(AA(1, 1));

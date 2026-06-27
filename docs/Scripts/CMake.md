@@ -98,7 +98,7 @@ add_library(animal cat.cc dog.cc)
 # CMakeLists.txt
 project(animal)
 add_subdirectory(animal)
-add_executable(animal_var(--vp-c-bg-soft) main.cc)
-target_link_libraries(animal_var(--vp-c-bg-soft) PUBLIC animal)
-target_include_directories(animal_var(--vp-c-bg-soft) PUBLIC ${PROJECT_SOURCE_DIR}/animal)
+add_executable(animal_test main.cc)
+target_link_libraries(animal_test PUBLIC animal)
+target_include_directories(animal_test PUBLIC ${PROJECT_SOURCE_DIR}/animal)
 ```
