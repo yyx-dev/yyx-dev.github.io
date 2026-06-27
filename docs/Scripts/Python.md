@@ -435,13 +435,13 @@ Python 中规定函数定义一定要放到函数调用之前。
 Python 中的函数可以一次返回多个值，这是非常好的特性。
 
 ```python
-def test():
+def var(--vp-c-bg-soft)():
     return 1, 2
 
-ret = test()
-a, b = test()
-_, b = test() # 下划线占位忽略该位置的返回值
-a, _ = test()
+ret = var(--vp-c-bg-soft)()
+a, b = var(--vp-c-bg-soft)()
+_, b = var(--vp-c-bg-soft)() # 下划线占位忽略该位置的返回值
+a, _ = var(--vp-c-bg-soft)()
 ```
 
 ### 5.2 变量作用域
@@ -461,12 +461,12 @@ print(x, y)
 ```python
 x = 10
 
-def test():
+def var(--vp-c-bg-soft)():
     global x    # 声明x为全局变量
     x = 20
     print(f'x={x}')
 
-test()
+var(--vp-c-bg-soft)()
 print(x)
 ```
 
@@ -752,7 +752,7 @@ b = {
 student = {
     'id': 1,
     'name': 'zhangsan'
-    6666: 'test'
+    6666: 'var(--vp-c-bg-soft)'
 }
 
 print('id'    in student) # True
@@ -824,9 +824,9 @@ print(student.values())
 
 ```python
 # 打开文件
-f_obj = open('/Users/yyo/Project/Python/Test/test.txt', 'w')
-f_obj = open('/Users/yyo/Project/Python/Test/test.txt', 'r')
-f_obj = open('/Users/yyo/Project/Python/Test/test.txt', 'a')
+f_obj = open('/Users/yyo/Project/Python/var(--vp-c-bg-soft)/var(--vp-c-bg-soft).txt', 'w')
+f_obj = open('/Users/yyo/Project/Python/var(--vp-c-bg-soft)/var(--vp-c-bg-soft).txt', 'r')
+f_obj = open('/Users/yyo/Project/Python/var(--vp-c-bg-soft)/var(--vp-c-bg-soft).txt', 'a')
 
 # 关闭文件
 f_obj.close();
@@ -863,7 +863,7 @@ print(lines)
 
 ```python
 def func():
-    with open('/Users/yyo/Project/Python/Test/test.txt', 'r') as f:
+    with open('/Users/yyo/Project/Python/var(--vp-c-bg-soft)/var(--vp-c-bg-soft).txt', 'r') as f:
         # 文件处理
     return
 ```

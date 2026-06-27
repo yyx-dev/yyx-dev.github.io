@@ -66,7 +66,7 @@ shell中的变量有四种，分别是本地变量、环境变量、全局变量
 
 | 条件格式            | 解释             |
 | ------------------- | ---------------- |
-| test 条件，[ 条件 ] | 两种方式作用一致 |
+| var(--vp-c-bg-soft) 条件，[ 条件 ] | 两种方式作用一致 |
 | [[ 条件 ]]          | 支持正则表达式   |
 
 | 条件     | 解释                                                         |
@@ -196,12 +196,12 @@ echo $*
 shift
 echo $*
 
-function test_shift() {
+function var(--vp-c-bg-soft)_shift() {
     echo $*
     shift
     echo $*
 }
-test 1 2 3 4 5
+var(--vp-c-bg-soft) 1 2 3 4 5
 ```
 
 ### expect
@@ -312,18 +312,18 @@ sed是流文本编辑器，就是将文件按行处理，shell脚本中使用sed
 | `-f` | `-e`是手写脚本，`-f`是指定sed脚本文件                        |
 
 ```shell
-sed -e '1i\first line'  test.txt # 第一行前新增一行first line
-sed -e '1a\second line' test.txt # 第一行后追加一行second line
+sed -e '1i\first line'  var(--vp-c-bg-soft).txt # 第一行前新增一行first line
+sed -e '1a\second line' var(--vp-c-bg-soft).txt # 第一行后追加一行second line
 
-sed -i    -e '1i\first line' test.txt # 将结果输出到源文件
-sed -i.bk -e '1i\first line' test.txt # 修改源文件之前生成一份备份文件，名为test.txt.bk
+sed -i    -e '1i\first line' var(--vp-c-bg-soft).txt # 将结果输出到源文件
+sed -i.bk -e '1i\first line' var(--vp-c-bg-soft).txt # 修改源文件之前生成一份备份文件，名为var(--vp-c-bg-soft).txt.bk
 
-sed '1d' test.txt # 删除第一行
+sed '1d' var(--vp-c-bg-soft).txt # 删除第一行
 
-sed '1c\first line' test.txt # 修改第一行为first line
+sed '1c\first line' var(--vp-c-bg-soft).txt # 修改第一行为first line
 
-sed '1s/1/2/'  test.txt # 第一行的1替换成2，只查找替换一次
-sed '1s/1/2/g' test.txt # 第一行中全部的1都替换成2
+sed '1s/1/2/'  var(--vp-c-bg-soft).txt # 第一行的1替换成2，只查找替换一次
+sed '1s/1/2/g' var(--vp-c-bg-soft).txt # 第一行中全部的1都替换成2
 
-sed -n '1p' test.txt # 忽略缓冲区，仅打印文件的第一行内容
+sed -n '1p' var(--vp-c-bg-soft).txt # 忽略缓冲区，仅打印文件的第一行内容
 ```

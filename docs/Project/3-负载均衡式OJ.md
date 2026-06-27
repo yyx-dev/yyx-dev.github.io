@@ -471,7 +471,7 @@ public:
 #include "header.cpp"
 #endif
 
-void Test1()
+void var(--vp-c-bg-soft)1()
 {
     vector<int> nums = { 2,7,11,15 };
     vector<int> ret = Solution().twoSum(nums, 9);
@@ -486,7 +486,7 @@ void Test1()
     }
 }
 
-void Test2()
+void var(--vp-c-bg-soft)2()
 {
     vector<int> nums = { 3,2,4 };
     vector<int> ret = Solution().twoSum(nums, 6);
@@ -501,7 +501,7 @@ void Test2()
     }
 }
 
-void Test3()
+void var(--vp-c-bg-soft)3()
 {
     vector<int> nums = { 3,3 };
     vector<int> ret = Solution().twoSum(nums, 6);
@@ -518,9 +518,9 @@ void Test3()
 
 int main()
 {
-    Test1();
-    Test2();
-    Test3();
+    var(--vp-c-bg-soft)1();
+    var(--vp-c-bg-soft)2();
+    var(--vp-c-bg-soft)3();
 
     return 0;
 }
@@ -1456,7 +1456,7 @@ public:
 #include "header.cpp"
 #endif
 
-void Test1()
+void var(--vp-c-bg-soft)1()
 {
     vector<int> nums = { 2,7,11,15 };
     vector<int> ret = Solution().twoSum(nums, 9);
@@ -1471,7 +1471,7 @@ void Test1()
     }
 }
 
-void Test2()
+void var(--vp-c-bg-soft)2()
 {
     vector<int> nums = { 3,2,4 };
     vector<int> ret = Solution().twoSum(nums, 6);
@@ -1486,7 +1486,7 @@ void Test2()
     }
 }
 
-void Test3()
+void var(--vp-c-bg-soft)3()
 {
     vector<int> nums = { 3,3 };
     vector<int> ret = Solution().twoSum(nums, 6);
@@ -1503,9 +1503,9 @@ void Test3()
 
 int main()
 {
-    Test1();
-    Test2();
-    Test3();
+    var(--vp-c-bg-soft)1();
+    var(--vp-c-bg-soft)2();
+    var(--vp-c-bg-soft)3();
 
     return 0;
 }', 1, 30720);
@@ -1543,7 +1543,7 @@ public:
 #include "header.cpp"
 #endif
 
-void Test1()
+void var(--vp-c-bg-soft)1()
 {
     vector<int> nums = { 10,22,23,152,65,79,85,96,32,1 };
     if (Solution().Max(nums) == 152)
@@ -1552,7 +1552,7 @@ void Test1()
         std::cout << "测试用例1失败" << std::endl;
 }
 
-void Test2()
+void var(--vp-c-bg-soft)2()
 {
     vector<int> nums = { 2,34,5,243,351,412,2,8,56,89,138, };
     if (Solution().Max(nums) == 412)
@@ -1563,8 +1563,8 @@ void Test2()
 
 int main()
 {
-    Test1();
-    Test2();
+    var(--vp-c-bg-soft)1();
+    var(--vp-c-bg-soft)2();
 
     return 0;
 }', 1, 40960);
@@ -1587,7 +1587,7 @@ $ yum install -y soci-mysql-devel.x86_64
 链接静态库的时候，要指明库名和路径。
 
 ```makefile
-mysql_test:mysql_test.cc
+mysql_var(--vp-c-bg-soft):mysql_var(--vp-c-bg-soft).cc
         g++ -o $@ $^ -lmysqlclient -L/usr/lib64/mysql -std=c++11
 ```
 

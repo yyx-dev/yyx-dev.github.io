@@ -26,8 +26,8 @@ git config --gloabl user.email "3395537299@qq.com"
 添加管理
 
 ```shell
-git add test.txt # 添加文件到暂存区
-git add -f test.txt # 强制添加
+git add var(--vp-c-bg-soft).txt # 添加文件到暂存区
+git add -f var(--vp-c-bg-soft).txt # 强制添加
 
 git comit -m 'msg' # 提交暂存区到仓库
 ```
@@ -44,7 +44,7 @@ git cat-file -p
 
 git status # 查看工作区状态
 
-git diff test.txt # 查看文件内容变化
+git diff var(--vp-c-bg-soft).txt # 查看文件内容变化
 ```
 
 版本回退
@@ -55,12 +55,12 @@ git reset --soft  # 回退版本库
 					--hard  # 回退版本库、暂存区和工作区
 							HEAD^
 
-git checkout -- test.txt # 将工作区文件退回到上一次add或commit
+git checkout -- var(--vp-c-bg-soft).txt # 将工作区文件退回到上一次add或commit
 ```
 
 删除文件
 ```shell
-git rm test.txt # 删除工作区和暂存区文件
+git rm var(--vp-c-bg-soft).txt # 删除工作区和暂存区文件
 ```
 
 忽略文件
@@ -70,7 +70,7 @@ git rm test.txt # 删除工作区和暂存区文件
 *.a # 忽略所有以.a结尾的文件
 !b.a # 不忽略b.a文件
 
-git check-ignore -v test.txt # 检查文件是否忽略
+git check-ignore -v var(--vp-c-bg-soft).txt # 检查文件是否忽略
 ```
 
 给命令取别名
