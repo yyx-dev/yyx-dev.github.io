@@ -91,6 +91,12 @@ export const menu = [
       { text: "事务", link: "/docs/MySQL/7-事务" },
     ],
   },
+  {
+    text: 'Other',
+    items: [
+      { text: '考研英语', link: '/docs/Other/考研英语' },
+    ]
+  },
   /*
   {
     text: 'Project',
