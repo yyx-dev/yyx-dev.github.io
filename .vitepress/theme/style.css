@@ -155,7 +155,6 @@
     --tip-bg: #cce5ff;
     --tip-color: #0d47a1;
     --warning-bg: #ffcccc;
-    --vp-font-family-question: "Times New Roman", "楷体";
 }
 
 .dark {
@@ -218,4 +217,9 @@ sup {
 .vp-doc h3,
 .vp-doc h4 {
     margin-bottom: 16px;
+}
+
+:root {
+    --vp-font-family-question: "Times New Roman", "宋体", "楷体";
+    --vp-font-family-analysis: "Times New Roman", "楷体", "宋体";
 }

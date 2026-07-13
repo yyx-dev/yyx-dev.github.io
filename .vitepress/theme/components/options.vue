@@ -43,6 +43,5 @@ const computedWidth = computed(() => {
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
-  font-family: var(--vp-font-family-question);
 }
 </style>

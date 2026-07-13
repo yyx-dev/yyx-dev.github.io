@@ -34,6 +34,7 @@ const displayTitle = computed(() => {
 <style scoped>
 .analysis-details {
   margin: 16px 0;
+  font-family: var(--vp-font-family-analysis);
 }
 
 .analysis-details summary {
