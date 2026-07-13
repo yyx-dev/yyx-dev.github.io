@@ -11,16 +11,16 @@ hero:
   actions:
     - theme: alt
       text: 数据结构
-      link: /docs/408/1-数据结构
+      link: /docs/408/01-数据结构
     - theme: brand
       text: 计算机组成原理
-      link: /docs/408/2-计算机组成原理
+      link: /docs/408/02-计算机组成原理
     - theme: brand
       text: 操作系统
-      link: /docs/408/3-操作系统
+      link: /docs/408/03-操作系统
     - theme: alt
       text: 计算机网络
-      link: /docs/408/4-计算机网络
+      link: /docs/408/04-计算机网络
     - theme: alt
       text: 交流
       link: https://github.com/yyx-dev/yyx-dev.github.io/issues
