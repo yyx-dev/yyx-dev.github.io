@@ -220,6 +220,10 @@ sup {
 }
 
 :root {
-    --vp-font-family-question: "Times New Roman", "宋体", "楷体";
+    --vp-font-family-question: "Times New Roman", "楷体", "宋体";
     --vp-font-family-analysis: "Times New Roman", "楷体", "宋体";
+}
+
+pre:not(.vp-code) {
+  font-size: var(--vp-code-font-size);
 }
