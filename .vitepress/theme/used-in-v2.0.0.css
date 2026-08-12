@@ -1,0 +1,18 @@
+/*
+ * 调整pre标签的字体大小和代码块一致，但不能影响代码块和info容器内的pre
+ */
+
+.vp-doc pre:not(.shiki) {
+    font-size: var(--vp-code-font-size);
+}
+
+/* 设置字体为微软雅黑 */
+:root {
+    --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont,
+        ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+::marker {
+    font-variant-numeric: normal;
+}

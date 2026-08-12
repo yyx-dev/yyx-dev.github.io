@@ -1,0 +1,23 @@
+{
+  "name": "yyx-dev.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev --host",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/markdown-it-container": "^4.0.0",
+    "@vite-pwa/vitepress": "^1.1.0",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-mathjax3": "^4.3.2",
+    "medium-zoom": "^1.1.0",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-lightbox": "^1.0.3"
+  }
+}

@@ -1,0 +1,43 @@
+/*
+ * 图片居中显示 img标签缺少上边距 BUG already fixed in commit 896e49a
+ */
+
+.vp-doc img {
+    margin: 16px auto;
+}
+
+/*
+ * 避免sub标签增加行距 BUG already fixed in commit 19357f9
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/*
+ * 修复锚点跳转被导航栏遮挡 BUG already fixed in commit dcb7a75
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: calc(var(--vp-nav-height) + 70px);
+}
+
+/*
+ * 调整pre标签的字体大小和代码块一致，但不能影响代码块和info容器内的pre
+ */
+
+pre:not(.vp-code):not(.info pre) {
+    font-size: var(--vp-code-font-size);
+}

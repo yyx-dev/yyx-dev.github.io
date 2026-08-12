@@ -1,0 +1,36 @@
+.vp-doc ol.list-style-single-paren,
+.vp-doc ol.list-style-double-paren {
+    padding-left: 0em;
+}
+.vp-doc ol.list-style-single-paren > li,
+.vp-doc ol.list-style-double-paren > li {
+    display: flex;
+}
+.vp-doc ol.list-style-single-paren > li::before,
+.vp-doc ol.list-style-double-paren > li::before {
+    display: inline-flex;
+    justify-content: flex-end;
+    padding-right: 4px;
+}
+
+.vp-doc ol.list-style-single-paren {
+    margin-left: -4px;
+}
+.vp-doc ol.list-style-single-paren > li {
+    counter-increment: single-counter;
+}
+.vp-doc ol.list-style-single-paren > li::before {
+    min-width: 24px;
+    content: counter(single-counter) ")";
+}
+
+.vp-doc ol.list-style-double-paren {
+    margin-left: -12px;
+}
+.vp-doc ol.list-style-double-paren > li {
+    counter-increment: double-counter;
+}
+.vp-doc ol.list-style-double-paren > li::before {
+    min-width: 32px;
+    content: "(" counter(double-counter) ")";
+}
