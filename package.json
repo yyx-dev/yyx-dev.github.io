@@ -19,5 +19,10 @@
     "medium-zoom": "^1.1.0",
     "vitepress": "^1.6.4",
     "vitepress-plugin-lightbox": "^1.0.3"
+  },
+  "overrides": {
+    "lightningcss": {
+      "lightningcss-android-arm64": "0.0.0"
+    }
   }
 }
