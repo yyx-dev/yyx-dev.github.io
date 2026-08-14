@@ -15,6 +15,8 @@ if ($currentDir -ne "yyx-dev.github.io") {
 # 检查并安装依赖
 if (-not (Test-Path "node_modules\vitepress")) {
     Write-Host "未检测到node_modules，自动下载中" -ForegroundColor Yellow
+    $env:HTTP_PROXY="http://127.0.0.1:7897";
+    $env:HTTPS_PROXY="http://127.0.0.1:7897"
     npm install
     if ($LASTEXITCODE -ne 0) {
         Write-Host "npm install 失败" -ForegroundColor Red
