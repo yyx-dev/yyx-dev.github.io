@@ -43,16 +43,62 @@
  * 设置控件question, analysis, stress的字体
  */
 
+@font-face {
+    font-family: 'STHeiti';
+    src: url('/fonts/STHeiti.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'STSong';
+    src: url('/fonts/STSong.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FZShuSong';
+    src: url('/fonts/FZShuSong.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'STKaiti';
+    src: url('/fonts/STKaiti.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
-    --font-family-question: "Times New Roman", "楷体", "华文楷体";
-    --font-family-analysis: "Times New Roman", "楷体", "华文楷体";
-    --font-family-syllabus: "Times New Roman", "宋体", "华文宋体";
+    --font-family-question: "Times New Roman", "STKaiti";
+    --font-family-analysis: "Times New Roman", "STKaiti";
+    --font-family-syllabus: "Times New Roman", "STSong";
+    --font-family-title:    "Times New Roman", "STHeiti";
     --font-family-stress:   "Times New Roman";
+}
+
+/*
+ * 自定义试卷标题样式
+ */
+
+.custom-h2 {
+    font-family: var(--font-family-title);
+    text-align: center;
+    justify-content: center;
+}
+
+.custom-h3 {
+    font-family: var(--font-family-title);
+    font-size: 16px !important;
+    font-weight: bold;
 }
 
 /*
  * 暗色模式下，对图片应用反色滤镜，并支持medium-zoom插件
  */
+
 html.dark .vp-doc img {
     filter: invert(0.894);
 }
@@ -62,33 +108,18 @@ html.dark .medium-zoom-image {
 }
 
 /*
- * 自定义试卷标题样式
- */
-
-.custom-h2 {
-    font-family: "Times New Roman", "黑体", "华文黑体";
-    text-align: center;
-    justify-content: center;
-}
-
-.custom-h3 {
-  font-family: "Times New Roman", "黑体", "华文黑体";
-  font-size: 16px !important;
-}
-
-/*
  * 打印时章节分页，隐藏VPNav和VPLocalNav
  */
 
 @media print {
-  .content h2:not(:first-of-type) {
-    page-break-before: always;
-    break-before: page;
-  }
+    .content h2:not(:first-of-type) {
+      page-break-before: always;
+      break-before: page;
+    }
 
-  .VPNav,
-  .VPLocalNav,
-  .VPDocFooter {
-    display: none;
-  }
+    .VPNav,
+    .VPLocalNav,
+    .VPDocFooter {
+      display: none;
+    }
 }
