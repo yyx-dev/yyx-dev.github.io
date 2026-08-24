@@ -6,7 +6,7 @@
 
 <style scoped>
 .question {
-  font-family: var(--vp-font-family-question);
+  font-family: var(--font-family-question);
   text-align: justify;
 }
 </style>

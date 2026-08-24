@@ -19,6 +19,7 @@ export const menu = [
         { text: "计算机组成原理", link: "/docs/408/10-计组强化题型" },
         { text: "操作系统", link: "/docs/408/11-操作系统强化题型" },
         { text: "计算机网络", link: "/docs/408/12-计网强化题型" },
+        { text: "历年真题", link: "/docs/408/13-历年真题" },
       ]},
     ],
   },

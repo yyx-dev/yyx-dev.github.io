@@ -44,7 +44,7 @@ defineProps({
   color: var(--stress-color);
   font-size: 16px;
   font-weight: 600;
-  font-family: var(--vp-font-family-stress);
+  font-family: var(--font-family-stress);
 }
 
 .stress:hover {

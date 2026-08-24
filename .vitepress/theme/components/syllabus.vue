@@ -6,7 +6,7 @@
 
 <style scoped>
 .syllabus {
-  font-family: var(--vp-font-family-syllabus);
+  font-family: var(--font-family-syllabus);
   text-align: justify;
 }
 </style>

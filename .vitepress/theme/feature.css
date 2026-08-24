@@ -44,19 +44,36 @@
  */
 
 :root {
-    --vp-font-family-question: "Times New Roman", "楷体", "华文楷体";
-    --vp-font-family-analysis: "Times New Roman", "楷体", "华文楷体";
-    --vp-font-family-syllabus: "Times New Roman", "宋体";
-    --vp-font-family-stress:   "Times New Roman";
+    --font-family-question: "Times New Roman", "楷体", "华文楷体";
+    --font-family-analysis: "Times New Roman", "楷体", "华文楷体";
+    --font-family-syllabus: "Times New Roman", "宋体", "华文宋体";
+    --font-family-stress:   "Times New Roman";
 }
 
-/* 暗色模式下，对图片应用反色滤镜 */
+/*
+ * 暗色模式下，对图片应用反色滤镜，并支持medium-zoom插件
+ */
 html.dark .vp-doc img {
     filter: invert(0.894);
 }
 
 html.dark .medium-zoom-image {
     filter: invert(0.894);
+}
+
+/*
+ * 自定义试卷标题样式
+ */
+
+.custom-h2 {
+    font-family: "Times New Roman", "黑体", "华文黑体";
+    text-align: center;
+    justify-content: center;
+}
+
+.custom-h3 {
+  font-family: "Times New Roman", "黑体", "华文黑体";
+  font-size: 16px !important;
 }
 
 /*
