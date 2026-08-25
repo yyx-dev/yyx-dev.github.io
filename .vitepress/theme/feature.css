@@ -58,13 +58,6 @@
 }
 
 @font-face {
-    font-family: 'FZShuSong';
-    src: url('/fonts/FZShuSong.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'STKaiti';
     src: url('/fonts/STKaiti.woff2') format('woff2');
     font-weight: normal;
