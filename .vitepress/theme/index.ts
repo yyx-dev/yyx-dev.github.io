@@ -22,8 +22,8 @@ import Layout from "./components/layout.vue";
 
 import "./style.css";
 import "./feature.css";
+import "./fixed.css";
 import "./perfect-list.css";
-import "./used-in-v1.6.4.css"
 
 export default {
   extends: DefaultTheme,
