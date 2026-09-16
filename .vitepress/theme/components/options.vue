@@ -1,7 +1,6 @@
 <template>
-  <div class="options" :style="{ width: computedWidth }">
-    <span v-for="option in options" :key="option" v-html="option">
-    </span>
+  <div class="options" :style="computedStyle">
+    <span v-for="option in options" :key="option" v-html="option"></span>
   </div>
 </template>
 
@@ -20,28 +19,35 @@ const props = defineProps({
   }
 })
 
-const computedWidth = computed(() => {
-  if (props.width !== null) {
-    return props.width
+const computedStyle = computed(() => {
+  const count = props.options.length
+
+  // 列数：1 个选项占满整行，2 个选项两列，4 个选项四列，其它情况按 1 列处理或自行调整
+  let columns = 1
+  if (count === 2) columns = 2
+  else if (count === 4) columns = 4
+
+  const style = {
+    gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`
   }
 
-  const count = props.options.length
-  if (count === 1) {
-    return '100%'
-  } else if (count === 2) {
-    return '75%'
-  } else if (count === 4) {
-    return '85%'
-  } else {
-    return '85%'
+  if (props.width !== null) {
+    style.width = props.width
   }
+
+  return style
 })
 </script>
 
 <style scoped>
 .options {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 10px;
+  display: grid;
+  width: 100%;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.options > span {
+  text-align: left;
 }
 </style>
