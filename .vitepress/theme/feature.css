@@ -101,11 +101,13 @@ html.dark .medium-zoom-image {
 }
 
 /*
- * 打印时章节分页，
- *   保持边距和网页一致，
- *   避免单元格被拆分
- *   添加页眉页脚，
- *   隐藏VPNav和VPLocalNav
+ * 打印时章节分页
+ * 保持边距和网页一致
+ * 避免孤行寡行
+ * 避免标题落在页码最下方
+ * 避免单元格被拆分
+ * 隐藏VPNav和VPLocalNav
+ * 添加页眉页脚
  */
 @media print {
     .content h2:not(:first-of-type) {
@@ -113,16 +115,21 @@ html.dark .medium-zoom-image {
         break-before: page;
     }
 
-    p, li {
+    .content p,
+    .content li {
         orphans: 2;
         widows: 2;
     }
 
-    h1, h2, h3, h4 {
+    .content h1,
+    .content h2,
+    .content h3,
+    .content h4,
+    .content h5 {
         break-after: avoid;
     }
 
-    tr {
+    .content tr {
         break-inside: avoid;
     }
 
