@@ -103,19 +103,33 @@ html.dark .medium-zoom-image {
 /*
  * 打印时章节分页，
  *   保持边距和网页一致，
+ *   避免单元格被拆分
  *   添加页眉页脚，
  *   隐藏VPNav和VPLocalNav
  */
 @media print {
     .content h2:not(:first-of-type) {
-      page-break-before: always;
-      break-before: page;
+        page-break-before: always;
+        break-before: page;
+    }
+
+    p, li {
+        orphans: 2;
+        widows: 2;
+    }
+
+    h1, h2, h3, h4 {
+        break-after: avoid;
+    }
+
+    tr {
+        break-inside: avoid;
     }
 
     .VPNav,
     .VPLocalNav,
     .VPDocFooter {
-      display: none;
+        display: none;
     }
 
     @page {
