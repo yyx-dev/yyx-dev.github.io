@@ -46,7 +46,7 @@ function recalcColumns() {
 
   const itemWidths = items.map((el) => el.offsetWidth)
 
-  const candidates = [4, 2, 1]
+  const candidates = [5, 4, 2, 1]
   let finalColumns = 1
   for (const n of candidates) {
     const effectiveN = Math.min(n, props.options.length)
