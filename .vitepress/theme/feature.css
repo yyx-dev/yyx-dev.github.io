@@ -1,0 +1,154 @@
+
+/**
+ * Component: Add Emphasis Warning Number ...
+ * -------------------------------------------------------------------------- */
+
+:root {
+    --add-bg: #e8f5e9;
+    --emphasis-bg: #ffeb3b;
+    --number-color: #e67e22;
+    --stress-bg: #e6f3ff;
+    --stress-color: #4a90d9;
+    --stress-hover: rgba(74, 144, 217, 0.15);
+    --super-add-bg: #e8f5e9;
+    --super-add-color: #2e7d32;
+    --super-emphasis-bg: #fffacd;
+    --super-emphasis-color: #d2691e;
+    --super-warning-bg: #ffebee;
+    --super-warning-color: #c0392b;
+    --tip-bg: #cce5ff;
+    --tip-color: #0d47a1;
+    --warning-bg: #ffcccc;
+}
+
+.dark {
+    --add-bg: #1b5e20; /* 深绿色背景 */
+    --emphasis-bg: #f9a825; /* 深黄色背景 */
+    --number-color: #f39c12; /* 亮橙色 */
+    --stress-bg: #1a2744; /* 深蓝色背景 */
+    --stress-color: #6ba3e0; /* 浅蓝色文字 */
+    --stress-hover: rgba(107, 163, 224, 0.15);
+    --super-add-bg: #1b5e20; /* 深绿色背景 */
+    --super-add-color: #81c784; /* 浅绿色文字 */
+    --super-emphasis-bg: #7d6608; /* 深黄褐色背景 */
+    --super-emphasis-color: #f5b041; /* 浅橙色文字 */
+    --super-warning-bg: #7b241c; /* 深红棕色背景 */
+    --super-warning-color: #e74c3c; /* 亮红色文字 */
+    --tip-bg: #0d47a1; /* 深蓝色背景 */
+    --tip-color: #bbdef5; /* 浅蓝色文字 */
+    --warning-bg: #7b2c2c; /* 深红色背景 */
+}
+
+/*
+ * 设置控件question, analysis, stress的字体
+ */
+
+@font-face {
+    font-family: 'STHeiti';
+    src: url('/fonts/STHeiti.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'STSong';
+    src: url('/fonts/STSong.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'STKaiti';
+    src: url('/fonts/STKaiti.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --font-family-question: "Times New Roman", "STKaiti";
+    --font-family-analysis: "Times New Roman", "STKaiti";
+    --font-family-syllabus: "Times New Roman", "STSong";
+    --font-family-title:    "Times New Roman", "STHeiti";
+    --font-family-stress:   "Times New Roman";
+}
+
+/*
+ * 自定义试卷标题样式
+ */
+
+.custom-h2 {
+    font-family: var(--font-family-title);
+    text-align: center;
+    justify-content: center;
+}
+
+.custom-h3 {
+    font-family: var(--font-family-title);
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+/*
+ * 暗色模式下，对图片应用反色滤镜，并支持medium-zoom插件
+ */
+
+html.dark .vp-doc img {
+    filter: invert(0.894);
+}
+
+html.dark .medium-zoom-image {
+    filter: invert(0.894);
+}
+
+/*
+ * 打印时章节分页
+ * 保持边距和网页一致
+ * 避免孤行寡行
+ * 避免标题落在页码最下方
+ * 避免单元格被拆分
+ * 隐藏VPNav和VPLocalNav
+ * 添加页眉页脚
+ */
+@media print {
+    .content h2:not(:first-of-type) {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    .content p,
+    .content li {
+        orphans: 2;
+        widows: 2;
+    }
+
+    .content h1,
+    .content h2,
+    .content h3,
+    .content h4,
+    .content h5 {
+        break-after: avoid;
+    }
+
+    .content tr {
+        break-inside: avoid;
+    }
+
+    .VPNav,
+    .VPLocalNav,
+    .VPDocFooter {
+        display: none;
+    }
+
+    @page {
+        margin-left: 0;
+        margin-right: 0;
+
+        @bottom-right {
+            content: counter(page);
+            color: var(--vp-c-text-2);
+            font-family: "Times New Roman";
+            font-size: 10pt;
+            padding-right: 15mm;
+        }
+    }
+}
