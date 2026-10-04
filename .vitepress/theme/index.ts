@@ -27,6 +27,10 @@ import "./feature.css";
 import "./fixed.css";
 import "./perfect-list.css";
 
+if (import.meta.env.PROD) {
+  import('./disable-print.css')
+}
+
 export default {
   extends: DefaultTheme,
   Layout,
