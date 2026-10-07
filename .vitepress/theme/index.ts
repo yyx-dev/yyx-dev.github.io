@@ -4,6 +4,7 @@ import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import add from "./components/add.vue";
 import analysis from "./components/analysis.vue";
+import download_btn from "./components/download-btn.vue";
 import emphasis from "./components/emphasis.vue";
 import fraction from "./components/fraction.vue";
 import stress from "./components/stress.vue";
@@ -37,6 +38,7 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.component("add", add);
     app.component("analysis", analysis);
+    app.component("download-btn", download_btn);
     app.component("emp", emphasis);
     app.component("frac", fraction);
     app.component("stress", stress);
