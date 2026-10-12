@@ -8,13 +8,13 @@
 mysql -h 127.0.0.1 -P 3306 -u root -p123456
 ```
 
-<img src="./1-基本概念和基础操作.assets/mysql服务器数据库表关系.png" style="zoom: 25%;" />
+<img src="./07-MySQL基础.assets/mysql服务器数据库表关系.png" style="zoom: 25%;" />
 
 > MySQL中，创建数据库本质就是创建一个目录，创建表本质就是在目录中创建文件，增删查改也就是访问该文件。
 
 MySQL是关系型数据库，数据存储是按行列存储的。通常把一行称为记录，一列称为属性。
 
-<img src="./1-基本概念和基础操作.assets/MySQL架构.png" style="zoom: 70%;" />
+<img src="./07-MySQL基础.assets/MySQL架构.png" style="zoom: 70%;" />
 
 最底层是磁盘文件系统，往上是存储引擎，存储引擎是系统文件的封装，帮助我们进行文件操作。其上还有分析器，对SQL语句分析翻译成文件操作。
 
@@ -210,15 +210,15 @@ set  ('选项1', '选项2', '选项3', ...)
 
 set类型可以选择多个选项，用逗号隔开，合并成一个字符串。
 
-<img src="./2-数据类型和表的约束.assets/set集合类型多选.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/set集合类型多选.png" style="zoom: 50%;" />
 
 set存储时采用位图结构。下标的二进制位，从低到高每个比特位表示一个选项，为1表示具有该选项，反之则没有。
 
-<img src="./2-数据类型和表的约束.assets/set集合类型选项表示规则.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/set集合类型选项表示规则.png" style="zoom: 50%;" />
 
 `where`只能筛选出严格匹配的记录，用`find_in_set`可以筛选出包含该选项的记录。
 
-<img src="./2-数据类型和表的约束.assets/set类型严格筛选和包含筛选.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/set类型严格筛选和包含筛选.png" style="zoom: 50%;" />
 
 ## 3. 表的约束
 
@@ -346,7 +346,7 @@ create table tb (
 )
 ```
 
-<img src="./2-数据类型和表的约束.assets/主表从表之间建立连接.png" style="zoom: 40%;" />
+<img src="./07-MySQL基础.assets/主表从表之间建立连接.png" style="zoom: 40%;" />
 
 通过外键产生关系的表，除了在逻辑上有关联，MySQL也会维护该逻辑对用户操作产生约束。
 
@@ -792,11 +792,11 @@ create view `view_name` as select ...;
 
 创建视图就相当于创建一张表，并且也以文件的形式保存在MySQL目录中。
 
-<img src="./5-用户权限和语言接口.assets/视图相当于生成一个表.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/视图相当于生成一个表.png" style="zoom: 50%;" />
 
 但文件只保存了结构没保存数据，每次查看视图都会临时从表中获取数据。这样有个好处是视图的数据变化会影响到基表，基表的数据变化也会影响到视图。
 
-<img src="./5-用户权限和语言接口.assets/视图只有结构没有数据.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/视图只有结构没有数据.png" style="zoom: 50%;" />
 
 ### 8.2 视图规定和限制
 
@@ -893,7 +893,7 @@ grant 权限列表 on 库.对象名 to '用户名'@'登陆IP' [ identified by '�
 flush privileges;
 ```
 
-<img src="./5-用户权限和语言接口.assets/用户赋权示例.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/用户赋权示例.png" style="zoom: 50%;" />
 
 如果嫌麻烦的话可以直接把权限列表写成`all`。
 
@@ -913,7 +913,7 @@ revoke 权限列表 on 库.对象名 from '用户名'@'登陆IP';
 
 要想使用C/C++的MySQL接口，必须使用MySQL提供的库。如果当初是用yum安装MySQL的直接就有。
 
-<img src="./5-用户权限和语言接口.assets/c语言MySQL库接口文件.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/c语言MySQL库接口文件.png" style="zoom: 50%;" />
 
 如果没有目录`/usr/include/mysql`，可以安装如下两个程序
 
@@ -1058,7 +1058,7 @@ MySQL中的数据是以Page为单位保存在内存中的。Page之间使用前�
 
 **如果存在主键，MySQL会自动将我们插入的数据，按主键的递增顺序进行排序**。便于优化查询的效率。首先数据得有序才能方便查找。
 
-<img src="./6-索引.assets/MySQLpage结构体.png" style="zoom: 33%;" />
+<img src="./07-MySQL基础.assets/MySQLpage结构体.png" style="zoom: 33%;" />
 
 #### 主键索引
 
@@ -1066,11 +1066,11 @@ MySQL中的数据是以Page为单位保存在内存中的。Page之间使用前�
 
 针对单页Page我们可以添加“目录”，目录存储所指向的记录的键值，这是一种以空间换时间的做法，但是建立在数据有序的基础上。
 
-<img src="./6-索引.assets/MySQLpage加上目录完整结构体.png" style="zoom: 33%;" />
+<img src="./07-MySQL基础.assets/MySQLpage加上目录完整结构体.png" style="zoom: 33%;" />
 
 > 如何提高在多个Page中的查找效率？
 
-<img src="./6-索引.assets/MySQL多页page示意图.png" style="zoom: 33%;" />
+<img src="./07-MySQL基础.assets/MySQL多页page示意图.png" style="zoom: 33%;" />
 
 Page以链表的形式组织，只能线性遍历也有效率问题。
 
@@ -1078,11 +1078,11 @@ Page以链表的形式组织，只能线性遍历也有效率问题。
 
 目录页也是页，普通页存储的是用户数据，目录页存储的是普通页的地址。这样一次查找就能排除多页，效率更高。
 
-<img src="./6-索引.assets/多页索引添加目录.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/多页索引添加目录.png" style="zoom: 50%;" />
 
 不过我们还需要一个管理页（可能是多个）存储其下所有目录页的最小键值，用来来管理其下所有目录页。这样每次查找从顶层管理页开始，逐步向下查找，这也就是B+树模型。
 
-<img src="./6-索引.assets/索引总体结构.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/索引总体结构.png" style="zoom: 50%;" />
 
 所谓索引，就是在MySQL内部，用页存储数据，再用B+树组织所有Page页。
 
@@ -1108,7 +1108,7 @@ B+树方案解决两个问题：线性遍历和大量IO。缺点是略降增删�
 | 聚簇索引   | InnoDB   | 叶节点存储数据                 |
 | 非聚簇索引 | MyISAM   | 叶节点不存储数据，存储数据地址 |
 
-<img src="./6-索引.assets/MyISAM非聚簇索引存地址.png" style="zoom: 67%;" />
+<img src="./07-MySQL基础.assets/MyISAM非聚簇索引存地址.png" style="zoom: 67%;" />
 
 除了主键索引，用户也有可能以其他字段建立索引，一般这种索引叫做辅助索引或者普通索引。
 
@@ -1313,7 +1313,7 @@ undo log是由MySQL开辟的一段内存，用来保存历史记录的。每一�
 
 这样，我们就有了一个基于链表记录的历史版本链。所谓回滚，就是用历史数据覆盖当前数据。一个个版本，称之为一个个的快照。
 
-<img src="./7-事务.assets/undo log示例.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/undo_log示例.png" style="zoom: 50%;" />
 
 ###### 添加undo log
 
@@ -1382,7 +1382,7 @@ private:
 2. 如果`DB_TRX_ID`小于低水位`m_up_limmit_id`或等于当前事务ID`m_create_trx_id`，说明该记录对本事务可见。
 3. 如果`DB_TRX_ID`在高低水位之间且在`m_ids`中，说明该事务在创建快照时未提交，如果不在`m_ids`中，说明该事务在创建快照时已经提交。如果已提交当前事务就能看到其所做的修改，反之则不能。
 
-<img src="./7-事务.assets/事务隔离判断历史版本是否看到.png" style="zoom: 50%;" />
+<img src="./07-MySQL基础.assets/事务隔离判断历史版本是否看到.png" style="zoom: 50%;" />
 
 **准确的来说，事务能够看到的历史记录，在快照创建的一瞬间就确定好了**。快照创建的时间就是事务首次进行select查询操作的时间，快照一旦建立好就不在变化，此时该事务所能看到的数据也就不会发生变化了。
 
