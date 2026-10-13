@@ -23,8 +23,8 @@ hero:
       link: /docs/408/04-计算机网络
 
 features:
-  - title: 408更新中...
-    details: 408考研笔记，提炼重点而非面面俱到。
+  - title: 408更新中
+    details: 广受好评的408笔记，不断修订中。
   - title: 博客已完结
     details: C/C++，数据结构，Linux系统网络，MySQL。
   - title: 其他
