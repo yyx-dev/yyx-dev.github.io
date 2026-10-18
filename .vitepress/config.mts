@@ -14,6 +14,11 @@ export default withPwa(defineConfig({
     ["meta", { name: "mobile-web-app-capable", content: "yes" }],
     ["meta", { name: "apple-mobile-web-app-status-bar-style", content: "default" }],
     ["meta", { name: "apple-mobile-web-app-title", content: "杨宇曦的博客" }],
+    // 百度统计
+    ["script", {}, `var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?58e223eec28eac3086480693a55100c5"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })();`],
+    // 谷歌统计
+    ["script", { async: "true", src: "https://www.googletagmanager.com/gtag/js?id=G-SDGSRBKKR4" }],
+    ["script", {}, "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SDGSRBKKR4');"]
   ],
 
   // lang: 'zh-Hans',
