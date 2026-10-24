@@ -18,7 +18,8 @@ export default withPwa(defineConfig({
     ["script", {}, `var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?58e223eec28eac3086480693a55100c5"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })();`],
     // 谷歌统计
     ["script", { async: "true", src: "https://www.googletagmanager.com/gtag/js?id=G-SDGSRBKKR4" }],
-    ["script", {}, "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SDGSRBKKR4');"]
+    ["script", {}, "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-SDGSRBKKR4');"],
+    ['script', { async: "true", src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9759530688796073', crossorigin: 'anonymous' } ]
   ],
 
   // lang: 'zh-Hans',
