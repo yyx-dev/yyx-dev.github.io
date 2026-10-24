@@ -4,7 +4,8 @@ import { onMounted } from "vue";
 import { useRouter } from "vitepress";
 import mediumZoom from "medium-zoom";
 
-import AdBanner from "./ad-banner.vue";
+import adsterra from "./adsterra.vue";
+import adsense from "./adsense.vue";
 
 const { Layout } = DefaultTheme;
 const router = useRouter();
@@ -26,7 +27,7 @@ router.onAfterRouteChange = setupMediumZoom;
 <template>
   <Layout>
     <template #aside-ads-after>
-      <AdBanner />
+      <adsense />
     </template>
   </Layout>
 </template>
