@@ -4,6 +4,8 @@ import { onMounted } from "vue";
 import { useRouter } from "vitepress";
 import mediumZoom from "medium-zoom";
 
+import AdBanner from "./ad-banner.vue";
+
 const { Layout } = DefaultTheme;
 const router = useRouter();
 
@@ -22,7 +24,11 @@ router.onAfterRouteChange = setupMediumZoom;
 </script>
 
 <template>
-  <Layout />
+  <Layout>
+    <template #aside-ads-after>
+      <AdBanner />
+    </template>
+  </Layout>
 </template>
 
 <style>
