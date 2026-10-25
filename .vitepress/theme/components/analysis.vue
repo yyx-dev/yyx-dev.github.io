@@ -1,8 +1,6 @@
 <template>
-  <details class="analysis-details" :open="isOpen" @toggle="handleToggle">
-    <summary>
-      【{{ displayTitle }}】
-    </summary>
+  <details ref="detailsRef" class="analysis-details" :open="defaultOpen" @toggle="handleToggle">
+    <summary>【{{ title }}】</summary>
     <div class="analysis-content">
       <slot />
       <hr/>
@@ -11,23 +9,44 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
 const props = defineProps({
-  title: {
-    type: String,
-    default: ''
-  }
+  defaultTitle: { type: String, default: '' },
+  defaultOpen: { type: Boolean, default: false },
+  openWhenPrint: { type: Boolean, default: false },
 })
 
-const isOpen = ref(false)
+const title = computed(() => props.defaultTitle || '分析')
+const isOpen = ref(props.defaultOpen)
+const detailsRef = ref(null)
 
 const handleToggle = (event) => {
   isOpen.value = event.target.open
 }
 
-const displayTitle = computed(() => {
-  return props.title || '分析'
+// 记录打印前的状态，打印后恢复
+let openBeforePrint = false
+
+const handleBeforePrint = () => {
+  if (!props.openWhenPrint) return
+  openBeforePrint = detailsRef.value?.open ?? false
+  if (detailsRef.value) detailsRef.value.open = true
+}
+
+const handleAfterPrint = () => {
+  if (!props.openWhenPrint) return
+  if (detailsRef.value) detailsRef.value.open = openBeforePrint
+}
+
+onMounted(() => {
+  window.addEventListener('beforeprint', handleBeforePrint)
+  window.addEventListener('afterprint', handleAfterPrint)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('beforeprint', handleBeforePrint)
+  window.removeEventListener('afterprint', handleAfterPrint)
 })
 </script>
 

@@ -101,23 +101,56 @@ export default withPwa(defineConfig({
         validate: (params: string) => params.trim().match(/^analysis\s*(.*)$/),
         render: (tokens: any[], idx: number) => {
           const token = tokens[idx];
-          const title = token.info.trim().slice("analysis".length).trim();
           if (token.nesting === 1) {
-            return `<analysis title="${title}">\n`;
-          } else {
-            return `</analysis>\n`;
+            const parts = token.info.trim().slice("analysis".length).trim().split(/\s+/).filter(Boolean);
+            let defaultOpen = false;
+            let openWhenPrint = false;
+            const titleParts = [];
+            for (let i = 0; i < parts.length; i++) {
+              if (parts[i] === 'openwhenprint') {
+                openWhenPrint = true;
+              } else if (parts[i] === 'open') {
+                const next = parts[i + 1];
+                if (next === 'true' || next === 'false') {
+                  defaultOpen = next === 'true';
+                  i++;
+                } else {
+                  defaultOpen = true;
+                }
+              } else {
+                titleParts.push(parts[i]);
+              }
+            }
+            const title = titleParts.join(' ');
+            return `<analysis default-title="${title}" :default-open="${defaultOpen}" :open-when-print="${openWhenPrint}">\n`;
           }
+          return `</analysis>\n`;
         },
       });
       md.use(container, "answer", {
-        validate: (params: string) => params.trim().match(/^answer\s*(.*)$/),
+        validate: (params: string) => params.trim().match(/^answer(\s+.*)?$/),
         render: (tokens: any[], idx: number) => {
           const token = tokens[idx];
           if (token.nesting === 1) {
-            return `<analysis title="答案">\n`;
-          } else {
-            return `</analysis>\n`;
+            const parts = token.info.trim().slice("answer".length).trim().split(/\s+/).filter(Boolean);
+            let defaultOpen = false;
+            let openWhenPrint = false;
+            for (let i = 0; i < parts.length; i++) {
+              if (parts[i] === 'openwhenprint') {
+                openWhenPrint = true;
+              } else if (parts[i] === 'open') {
+                const next = parts[i + 1];
+                if (next === 'true' || next === 'false') {
+                  defaultOpen = next === 'true';
+                  i++;
+                } else {
+                  defaultOpen = true;
+                }
+              }
+            }
+            return `<analysis default-title="答案" :default-open="${defaultOpen}" :open-when-print="${openWhenPrint}">\n`;
           }
+          return `</analysis>\n`;
         },
       });
       md.use(container, "stress", {
