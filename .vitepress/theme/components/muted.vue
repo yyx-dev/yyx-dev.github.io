@@ -22,6 +22,11 @@
   filter: opacity(0.6);
 }
 
+.muted-block :deep(div[class*='language-']) {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
 .muted-block::after {
   content: '不重要内容';
   position: absolute;
